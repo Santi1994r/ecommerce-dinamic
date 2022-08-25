@@ -1,3 +1,7 @@
-.posicion {
-    position: relative;
+
+@media (max-width: 576px) {
+    .soloXXL{
+        display: none !important;
+        
+    }
 }
