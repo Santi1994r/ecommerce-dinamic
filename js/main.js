@@ -1,4 +1,5 @@
-/* 
+
+//Simulador de compras con descuentos dependiendo de la cantidad. si lleva 2 paga lo mismo y si lleva 3 se le hace el 40% del total.
 let nombre = prompt(`Bienvenido a "Viciosos". ¿Como te llamas?`);
 let queDispositivoEs = "";
 let cantidad = 0;
@@ -84,14 +85,14 @@ do {
     }
     queDispositivoEs = confirm(`¿Quieres seguir comprando ${nombre}?`);
 
-} while (queDispositivoEs); */
+} while (queDispositivoEs);
 
 
 
 
 
 //----------------------------------------------------------
-
+//nose como tomar el evento de cuando esta en version mobile para sacar una clase para que el video este centrado tanto en pc como para mobile.
 /* let $borrarClase = document.getElementById("claseBorrada");
 const $div = document.createElement("div");
 $div.setAttribute("class", "col");

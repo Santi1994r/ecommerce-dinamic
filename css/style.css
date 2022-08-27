@@ -47,16 +47,25 @@ body {
 .tituloProductos {
     text-align: center;
     color: #F7DC6F;
-    margin-top: 5rem;    
+    margin-top: 3rem; 
+    margin-bottom: 4rem;   
 }
 .carritoContainer{
     color: white;
     font-size: 2rem;
     display: flex;
     justify-content: flex-end;
+    margin-top: 4rem;
 }
 .carritoContainer img {
     width: 3.5rem;
+}
+.filtrosContainer {
+    display: flex;
+    flex-direction: column;
+}
+.filtros {
+    color: white;
 }
 /* ------FIN DE ESTILOS DE ARCHIVO PRODUCTOS.HTML---- */
 
