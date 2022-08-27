@@ -1,5 +1,5 @@
-
-/* let nombre = prompt(`Bienvenido a "Viciosos". ¿Como te llamas?`);
+/* 
+let nombre = prompt(`Bienvenido a "Viciosos". ¿Como te llamas?`);
 let queDispositivoEs = "";
 let cantidad = 0;
 let precio = 0;
@@ -89,24 +89,10 @@ do {
 
 
 
-// Ejercicio 2: for
-//A-Imprimir por consola numeros del 1 al 15. Con un ciclo for
-//B-Imprimir por consola numeros del 1 al 15. Con un ciclo for. Pero cuando el número sea múltiplo de 3, imprimir "fizz"
-//C-Imprimir por consola numeros del 1 al 15. Con un ciclo for. Pero cuando el número sea múltiplo de 5, imprimir "buzz"
-//D-Imprimir por consola numeros del 1 al 15. Con un ciclo for. Pero cuando el número sea múltiplo de 3, imprimir "fizz".Pero cuando el número sea múltiplo de 5, imprimir "buzz". Y cuando sea multiplo de 3 y de 5, imprimir "fizzbuzz"
-
-
-//Ejercicio 1: switch y do while
-//Usando prompt y alert...
-//A-Solicitar al usuario que marque un numero del 1 al 9 con switch y que con alert me indique que numero ingrese. Establecer una condicion default
-//B-Si el usuario no marca un numero del 1 al 9, volver a pedirselo con un do...while
-//C-Si el usuario no marca un numero del 1 al 9 y ademas...no ingresa un numero, volver a pedirselo con un do...while
-
-// let numeroMarcado;
 
 //----------------------------------------------------------
 
-let $borrarClase = document.getElementById("claseBorrada");
+/* let $borrarClase = document.getElementById("claseBorrada");
 const $div = document.createElement("div");
 $div.setAttribute("class", "col");
 $borrarClase.innerHTML = `
@@ -115,7 +101,7 @@ $borrarClase.innerHTML = `
                     <iframe src="./images/santiago-logo.mp4" class="video" title="santiago ruiz" allowfullscreen>
                     </iframe>
                 </div>
-            </div>`;
+            </div>`; */
 
 
 

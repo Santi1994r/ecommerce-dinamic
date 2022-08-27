@@ -4,7 +4,7 @@ body {
 }
 
 /* -----Index-MENU-------- */
-.titulos {
+.titulo {
     color: #F7DC6F;
     margin: 3rem;
     text-align: center;
@@ -42,6 +42,30 @@ body {
 .video {
     width: 80%;
 }
+
+/* ------ESTILOS DE ARCHIVO PRODUCTOS.HTML---- */
+.tituloProductos {
+    text-align: center;
+    color: #F7DC6F;
+    margin-top: 5rem;    
+}
+.carritoContainer{
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.carritoContainer img {
+    width: 3.5rem;
+}
+/* ------FIN DE ESTILOS DE ARCHIVO PRODUCTOS.HTML---- */
+
+
+
+
+
+
+
 
 /* --------Media Query------ */
 @media (max-width: 576px) {
