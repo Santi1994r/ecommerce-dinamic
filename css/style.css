@@ -1,7 +1,75 @@
+/* ---BODY---- */
+body {
+    background-color: #212121;
+}
 
+/* -----Index-MENU-------- */
+.titulos {
+    color: #F7DC6F;
+    margin: 3rem;
+    text-align: center;
+}
+.imagenTitulo {
+    border-radius: 50%;
+    margin: 1rem;
+    width: 25rem;
+}
+.parrafoMenu {
+    margin: 2rem;
+    color: #F7DC6F;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.navegador {
+    opacity: .3;
+    color: #F7DC6F;
+}
+.navegador:hover {
+    border-bottom: .2rem solid red;
+    border-radius: 2rem;
+    opacity: 1;
+    color: #B03A2E;
+    box-shadow: 0 3px 20px 1px red;
+}
+.ahoraMobile {
+    width: 75%;
+    margin: 4rem;
+}
+.cajaVideo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.video {
+    width: 80%;
+}
+
+/* --------Media Query------ */
 @media (max-width: 576px) {
-    .soloXXL{
+    .soloXXL {
         display: none !important;
-        
+    }
+
+    .logo {
+        width: 5rem;
+        border-radius: 50%;
+    }
+
+    .menuEscritorio {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .ahoraMobile {
+        width: 100%;
+        margin: 1rem;
+    }
+    .imagenTitulo {
+        border-radius: 50%;
+        margin: 1rem;
+        width: 15rem;
+    }
+    .video {
+        width: 100%;
     }
 }

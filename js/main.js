@@ -1,5 +1,5 @@
 
-let nombre = prompt(`Bienvenido a "Viciosos". ¿Como te llamas?`);
+/* let nombre = prompt(`Bienvenido a "Viciosos". ¿Como te llamas?`);
 let queDispositivoEs = "";
 let cantidad = 0;
 let precio = 0;
@@ -19,7 +19,7 @@ do {
             console.log(totalDeCuenta(precio,cantidad))
             if (cantidad >= 3) {
                 totalConDescuento = totalDeCuenta(precio, cantidad) - (totalDeCuenta(precio, cantidad) * 0.4)
-                alert(`Al comprar 3 o mas celulares obtienes un descuento del 40%. Tu elejiste ${cantidad} celulares y con esto tu total es de ${totalConDescuento}`);
+                alert(`Al comprar 3 o mas celulares obtienes un descuento del 40%. Tu elejiste ${cantidad} celulares y con esto tu subtotal es de ${totalDeCuenta(precio, cantidad)} y el Total es ${totalConDescuento}`);
             } else if (cantidad < 3 && cantidad > 0) {
                 alert(`El total de su compra es de ${totalDeCuenta(precio, cantidad)} pesos llevando ${cantidad} celular/es`);
             } else {
@@ -32,7 +32,7 @@ do {
             console.log(totalDeCuenta(precio,cantidad))
             if (cantidad >= 3) {
                 totalConDescuento = totalDeCuenta(precio, cantidad) - (totalDeCuenta(precio, cantidad) * 0.4)
-                alert(`Al comprar 3 o mas tablets obtienes un descuento del 40%. Tu elejiste ${cantidad} tablet y con esto tu total es de ${totalConDescuento}`);
+                alert(`Al comprar 3 o mas tablets obtienes un descuento del 40%. Tu elejiste ${cantidad} tablet y con esto tu subtotal es de ${totalDeCuenta(precio, cantidad)} y el Total es ${totalConDescuento}`);
             } else if (cantidad < 3 && cantidad > 0) {
                 alert(`El total de su compra es de ${totalDeCuenta(precio, cantidad)} pesos llevando ${cantidad} tablet/s`);
             } else {
@@ -45,7 +45,7 @@ do {
             console.log(totalDeCuenta(precio,cantidad))
             if (cantidad >= 3) {
                 totalConDescuento = totalDeCuenta(precio, cantidad) - (totalDeCuenta(precio, cantidad) * 0.4)
-                alert(`Al comprar 3 o mas pc obtienes un descuento del 40%. Tu elejiste ${cantidad} pc y con esto tu total es de ${totalConDescuento}`);
+                alert(`Al comprar 3 o mas pc obtienes un descuento del 40%. Tu elejiste ${cantidad} pc y con esto tu subtotal es de ${totalDeCuenta(precio, cantidad)} y el Total es ${totalConDescuento}`);
             } else if (cantidad < 3 && cantidad > 0) {
                 alert(`El total de su compra es de ${totalDeCuenta(precio, cantidad)} pesos llevando ${cantidad} pc`);
             } else {
@@ -58,7 +58,7 @@ do {
             console.log(totalDeCuenta(precio,cantidad))
             if (cantidad >= 3) {
                 totalConDescuento = totalDeCuenta(precio, cantidad) - (totalDeCuenta(precio, cantidad) * 0.4)
-                alert(`Al comprar 3 o mas notebook obtienes un descuento del 40%. Tu elejiste ${cantidad} notebook y con esto tu total es de ${totalConDescuento}`);
+                alert(`Al comprar 3 o mas notebook obtienes un descuento del 40%. Tu elejiste ${cantidad} notebook y con esto tu subtotal es de ${totalDeCuenta(precio, cantidad)} y el Total es ${totalConDescuento}`);
             } else if (cantidad < 3 && cantidad > 0) {
                 alert(`El total de su compra es de ${totalDeCuenta(precio, cantidad)} pesos llevando ${cantidad} notebook`);
             } else {
@@ -71,7 +71,7 @@ do {
             console.log(totalDeCuenta(precio,cantidad))
             if (cantidad >= 3) {
                 totalConDescuento = totalDeCuenta(precio, cantidad) - (totalDeCuenta(precio, cantidad) * 0.4)
-                alert(`Al comprar 3 o mas tv obtienes un descuento del 40%. Tu elejiste ${cantidad} tv y con esto tu total es de ${totalConDescuento}`);
+                alert(`Al comprar 3 o mas tv obtienes un descuento del 40%. Tu elejiste ${cantidad} tv y con esto tu subtotal es de ${totalDeCuenta(precio, cantidad)} y el Total es ${totalConDescuento}`);
             } else if (cantidad < 3 && cantidad > 0) {
                 alert(`El total de su compra es de ${totalDeCuenta(precio, cantidad)} pesos llevando ${cantidad} tv`);
             } else {
@@ -84,4 +84,39 @@ do {
     }
     queDispositivoEs = confirm(`¿Quieres seguir comprando ${nombre}?`);
 
-} while (queDispositivoEs)
+} while (queDispositivoEs); */
+
+
+
+
+// Ejercicio 2: for
+//A-Imprimir por consola numeros del 1 al 15. Con un ciclo for
+//B-Imprimir por consola numeros del 1 al 15. Con un ciclo for. Pero cuando el número sea múltiplo de 3, imprimir "fizz"
+//C-Imprimir por consola numeros del 1 al 15. Con un ciclo for. Pero cuando el número sea múltiplo de 5, imprimir "buzz"
+//D-Imprimir por consola numeros del 1 al 15. Con un ciclo for. Pero cuando el número sea múltiplo de 3, imprimir "fizz".Pero cuando el número sea múltiplo de 5, imprimir "buzz". Y cuando sea multiplo de 3 y de 5, imprimir "fizzbuzz"
+
+
+//Ejercicio 1: switch y do while
+//Usando prompt y alert...
+//A-Solicitar al usuario que marque un numero del 1 al 9 con switch y que con alert me indique que numero ingrese. Establecer una condicion default
+//B-Si el usuario no marca un numero del 1 al 9, volver a pedirselo con un do...while
+//C-Si el usuario no marca un numero del 1 al 9 y ademas...no ingresa un numero, volver a pedirselo con un do...while
+
+// let numeroMarcado;
+
+//----------------------------------------------------------
+
+let $borrarClase = document.getElementById("claseBorrada");
+const $div = document.createElement("div");
+$div.setAttribute("class", "col");
+$borrarClase.innerHTML = `
+<div id="claseBorrada" class="col">
+                <div class="ratio ratio-16x9 cajaVideo">
+                    <iframe src="./images/santiago-logo.mp4" class="video" title="santiago ruiz" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>`;
+
+
+
+
