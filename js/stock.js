@@ -1,4 +1,4 @@
-class Productos {
+/* class Productos {
     constructor(id, descripcion, stock, precio, imagen) {
         this.id = id;
         this.descripcion = descripcion;
@@ -23,7 +23,7 @@ let productos = [
     gabineteRaidmax,
     gabineteThyphoon,
     gabineteBlanco
-];
+]; */
 
 /* //console.log(productos);
 const preciosFiltrados = productos.filter((producto) => producto.precio < 20000);
@@ -32,7 +32,7 @@ const preciosFiltrados = productos.filter((producto) => producto.precio < 20000)
 const productoFiltrado = productos.filter(producto => producto.descripcion == "MICROPROCESADOR CPU AMD RYZEN 5 5600 6/12 ZEN3");
 //console.log(productoFiltrado);
 */
-const idFiltrado = productos.filter(producto => producto.id == 6);
+/* const idFiltrado = productos.filter(producto => producto.id == 6);
 //console.log(idFiltrado); 
 
 let $prueba = document.getElementById("btnAgregarACarrito");
@@ -40,4 +40,32 @@ let $prueba = document.getElementById("btnAgregarACarrito");
 $prueba.addEventListener("click", () => {
     idFiltrado;
     console.log(idFiltrado); 
+}) */
+
+/* productosDinamicos.addEventListener("DOMContentLoaded", () => {
+    cards(productos);
 })
+
+
+const cards = productos => {
+    let productosVista = "";
+    productos.forEach(producto => {
+        productosVista += `
+        <div class="card h-100">
+        <img src="${productos.imagen}" class="card-img-top" alt="tu mundo digital">
+        <div class="card-body">
+          <h5 class="card-title">${productos.descripcion}</h5>
+          <p class="card-text">${productos.precio}</p>
+          <p class="card-text">Impuesto Incluido</p>
+          <div class="input-group mb-3 w-75">
+            <span class="input-group-text">Cantidad</span>
+            <input type="number" id="cantidadIngresada" class="form-control">
+          </div>
+          <button type="button" class="btn btn-warning " id="btnAgregarACarrito">Agregar al Carrito</button>
+        </div>
+      </div>`;
+      productosDinamicos.innerHTML = productosVista;
+    });
+} */
+
+

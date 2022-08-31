@@ -1,4 +1,3 @@
-
 /* let agregarACarrito = document.getElementById("btnAgregarACarrito");
 
 agregarACarrito.addEventListener("click", () => {
