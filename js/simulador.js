@@ -1,5 +1,5 @@
-/* 
-//Simulador de compras con descuentos dependiendo de la cantidad. si lleva 2 paga lo mismo y si lleva 3 se le hace el 40% del total.
+
+/* //Simulador de compras con descuentos dependiendo de la cantidad. si lleva 2 paga lo mismo y si lleva 3 se le hace el 40% del total.
 let nombre = prompt(`Bienvenido a "Tu Mundo Digital". ¿Como te llamas?`);
 let queDispositivoEs = "";
 let cantidad = 0;
