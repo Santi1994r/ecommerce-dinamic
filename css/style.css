@@ -20,7 +20,6 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 .navegador {
-    opacity: .3;
     color: #F7DC6F;
 }
 .navegador:hover {
@@ -68,10 +67,6 @@ body {
     color: white;
 }
 /* ------FIN DE ESTILOS DE ARCHIVO PRODUCTOS.HTML---- */
-
-
-
-
 
 
 

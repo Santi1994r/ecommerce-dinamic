@@ -17,9 +17,9 @@
  const gabineteThyphoon = new Producto(5, "GABINETE GAMEMAX TYPHOON COC FAN ARGB", 7, 11900, "../images/gabineteThyphoon.png");
  const gabineteBlanco = new Producto(6, "GABINETE THERMALTAKE H200 TG RGB SNOW", 6, 18900, "../images/gabineteBlanco.png");
 
- //-----   ----- simulador ----- -------  ----
- let seguirComprando = "";
+ //-----   ----- Variables Globales----- -------  ----
  let total = 0;
+ let seguirComprando = "";
  let subTotal = 0;
  let totalMasIva = 0;
  const productosElejidos = [];
@@ -29,24 +29,25 @@
 
  //Con esta funcion obtengo la cantidad y el subtotal
  const subTotalPorCantidad = (precio) => {
-     cantidad = Number(prompt("¿Cuantas unidades quieres comprar?"));
+    do {
+        cantidad = Number(prompt("¿Cuantas unidades quieres comprar?"));        
+    } while (!(Number(cantidad)));
      subTotal = precio * cantidad;
      return subTotal;
  };
  //Con esta funcion agrego el Iva al subTotal
  const masIva = (total) => total * 1.21;
 
- //Funcion para descontar el stock
- const calculoStock = () => {
-    
- }
+
  //-----------------------
+ //COMIENZO DE PROGRAMA
  //----------------------
  do {
      let precio = 0;
      let descripcion = "";
      let resumen = "";
-     let comprarProducto = prompt(`Elije que producto quieres comprar  \n${microAmd5.id} -${microAmd5.descripcion} - $${microAmd5.precio} \n${microAmd7.id} -${microAmd7.descripcion} - $${microAmd7.precio} \n${microCoreI5.id} -${microCoreI5.descripcion} - $${microCoreI5.precio} \n${gabineteRaidmax.id} -${gabineteRaidmax.descripcion} - $${gabineteRaidmax.precio} \n${gabineteThyphoon.id} -${gabineteThyphoon.descripcion} - $${gabineteThyphoon.precio} \n${gabineteBlanco.id} -${gabineteBlanco.descripcion} - $${gabineteBlanco.precio}`);
+     
+     let comprarProducto = prompt(`Bienvenido a "Tu Mundo Digital"\nElije que producto quieres comprar  \n${microAmd5.id} -${microAmd5.descripcion} - $${microAmd5.precio} \n${microAmd7.id} -${microAmd7.descripcion} - $${microAmd7.precio} \n${microCoreI5.id} -${microCoreI5.descripcion} - $${microCoreI5.precio} \n${gabineteRaidmax.id} -${gabineteRaidmax.descripcion} - $${gabineteRaidmax.precio} \n${gabineteThyphoon.id} -${gabineteThyphoon.descripcion} - $${gabineteThyphoon.precio} \n${gabineteBlanco.id} -${gabineteBlanco.descripcion} - $${gabineteBlanco.precio}`);
      switch (comprarProducto) {
          case "":
              alert("No puedes ingresar vacia la respuesta");
@@ -91,10 +92,10 @@
              alert("ERROR: Tu respuesta es invalida");
              break;
      };
-     productosElejidos.push(resumen);
+     productosElejidos.push(resumen + "\n");
      total += subTotal;
      totalMasIva = (masIva(total)).toFixed(2);
      seguirComprando = confirm("Quieres seguir comprando?");
  } while (seguirComprando);
  console.log(
-     `Los productos elejidos son\n${productosElejidos}\n Su subtotal es ${total}\n Su total incluyendo el Iva del 21% es de $${totalMasIva}`);
+     `Los productos elejidos son\n${productosElejidos}\n Su subtotal es $${total}\n Su total incluyendo el Iva del 21% es de $${totalMasIva}`);
