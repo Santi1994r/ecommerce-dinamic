@@ -97,5 +97,5 @@
      totalMasIva = (masIva(total)).toFixed(2);
      seguirComprando = confirm("Quieres seguir comprando?");
  } while (seguirComprando);
- console.log(
+ alert(
      `Los productos elejidos son\n${productosElejidos}\n Su subtotal es $${total}\n Su total incluyendo el Iva del 21% es de $${totalMasIva}`);
