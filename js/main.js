@@ -22,22 +22,29 @@
  let seguirComprando = "";
  let subTotal = 0;
  let totalMasIva = 0;
+ let resumen = "";
  const productosElejidos = [];
+
+ //Funcion para resumir codigo en el switch
+ const funcionParaResumir = (descripcion, precio) => {
+     subTotal = subTotalPorCantidad(precio);
+     resumen = resumenCantidad(descripcion, cantidad)
+ }
+
+ //Con esta funcion obtengo la cantidad y el subtotal
+ const subTotalPorCantidad = (precio) => {
+     do {
+         cantidad = Number(prompt("¿Cuantas unidades quieres comprar?"));
+     } while (!(Number(cantidad)));
+     subTotal = precio * cantidad;
+     return subTotal;
+ };
 
  //Funcion para mostrar la cantidad y el producto elejido
  const resumenCantidad = (descripcion, cantidad) => `${descripcion} x ${cantidad} unidad/es.`;
 
- //Con esta funcion obtengo la cantidad y el subtotal
- const subTotalPorCantidad = (precio) => {
-    do {
-        cantidad = Number(prompt("¿Cuantas unidades quieres comprar?"));        
-    } while (!(Number(cantidad)));
-     subTotal = precio * cantidad;
-     return subTotal;
- };
  //Con esta funcion agrego el Iva al subTotal
  const masIva = (total) => total * 1.21;
-
 
  //-----------------------
  //COMIENZO DE PROGRAMA
@@ -45,57 +52,46 @@
  do {
      let precio = 0;
      let descripcion = "";
-     let resumen = "";
-     
+
+
      let comprarProducto = prompt(`Bienvenido a "Tu Mundo Digital"\nElije que producto quieres comprar  \n${microAmd5.id} -${microAmd5.descripcion} - $${microAmd5.precio} \n${microAmd7.id} -${microAmd7.descripcion} - $${microAmd7.precio} \n${microCoreI5.id} -${microCoreI5.descripcion} - $${microCoreI5.precio} \n${gabineteRaidmax.id} -${gabineteRaidmax.descripcion} - $${gabineteRaidmax.precio} \n${gabineteThyphoon.id} -${gabineteThyphoon.descripcion} - $${gabineteThyphoon.precio} \n${gabineteBlanco.id} -${gabineteBlanco.descripcion} - $${gabineteBlanco.precio}`);
      switch (comprarProducto) {
          case "":
              alert("No puedes ingresar vacia la respuesta");
              break;
          case "1":
-             descripcion = microAmd5.descripcion
-             precio = microAmd5.precio;
-             subTotal = subTotalPorCantidad(precio);
-             resumen = resumenCantidad(descripcion, cantidad)
+             funcionParaResumir(microAmd5.descripcion, microAmd5.precio);
              break;
          case "2":
-             descripcion = microAmd7.descripcion
-             precio = microAmd7.precio;
-             subTotal = subTotalPorCantidad(precio); //aca guardo la funcion dentro de la variable para que sea mas legible. Nose si esta bien hacerlo asi o hay formas mejores.
-             resumen = resumenCantidad(descripcion, cantidad)
+             funcionParaResumir(microAmd7.descripcion, microAmd7.precio);
              break;
          case "3":
-             descripcion = microCoreI5.descripcion
-             precio = microCoreI5.precio;
-             subTotal = subTotalPorCantidad(precio);
-             resumen = resumenCantidad(descripcion, cantidad)
+             funcionParaResumir(microCoreI5.descripcion, microCoreI5.precio);
              break;
          case "4":
-             descripcion = gabineteRaidmax.descripcion
-             precio = gabineteRaidmax.precio;
-             subTotal = subTotalPorCantidad(precio);
-             resumen = resumenCantidad(descripcion, cantidad)
+             funcionParaResumir(gabineteRaidmax.descripcion, gabineteRaidmax.precio);
              break;
          case "5":
-             descripcion = gabineteThyphoon.descripcion
-             precio = gabineteThyphoon.precio;
-             subTotal = subTotalPorCantidad(precio);
-             resumen = resumenCantidad(descripcion, cantidad)
+             funcionParaResumir(gabineteThyphoon.descripcion, gabineteThyphoon.precio);
              break;
          case "6":
-             descripcion = gabineteBlanco.descripcion
-             precio = gabineteBlanco.precio;
-             subTotal = subTotalPorCantidad(precio);
-             resumen = resumenCantidad(descripcion, cantidad)
+             funcionParaResumir(gabineteBlanco.descripcion, gabineteBlanco.precio);
              break;
          default:
              alert("ERROR: Tu respuesta es invalida");
              break;
      };
+
      productosElejidos.push(resumen + "\n");
      total += subTotal;
      totalMasIva = (masIva(total)).toFixed(2);
      seguirComprando = confirm("Quieres seguir comprando?");
  } while (seguirComprando);
- alert(
-     `Los productos elejidos son\n${productosElejidos}\n Su subtotal es $${total}\n Su total incluyendo el Iva del 21% es de $${totalMasIva}`);
+
+ (total == 0) 
+ ? alert(`Adios, vuelve pronto`)
+ : alert(`Los productos elejidos son\n${productosElejidos}\n Su subtotal es $${total}\n Su total incluyendo el Iva del 21% es de $${totalMasIva}`);
+
+
+
+ 
