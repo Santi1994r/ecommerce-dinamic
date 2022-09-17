@@ -26,4 +26,4 @@
    gabineteBlanco
  ];
 
- let carrito = [];
+ const carrito = [];
