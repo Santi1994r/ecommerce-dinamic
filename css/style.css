@@ -2,7 +2,6 @@
 body {
     background-color: #212121;
 }
-
 /* -----Index-MENU-------- */
 .titulo {
     color: #F7DC6F;
@@ -19,15 +18,17 @@ body {
     color: #F7DC6F;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+.padreNavegador {
+    background-color: #001;
+    height: 4rem;
+}
 .navegador {
     color: #F7DC6F;
 }
 .navegador:hover {
-    border-bottom: .2rem solid red;
-    border-radius: 2rem;
-    opacity: 1;
-    color: #B03A2E;
-    box-shadow: 0 3px 20px 1px red;
+    border-bottom: .2rem solid #F7DC6F;
+    border-radius: 1rem;
+    color: #F7DC6F;
 }
 .ahoraMobile {
     width: 75%;
