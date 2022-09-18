@@ -91,6 +91,20 @@
 
 //-----------------------------------------------------
 
+//Funcion para agregar producto a carrito
+const agregarProductoACarrito = (id) => {
+  let producto = PRODUCTOS.find(prod => prod.id === id)
+  let productoDelCarrito = carrito.find(prod => prod.id === producto.id);
+
+  if (productoDelCarrito) {
+    productoDelCarrito.cantidad++
+    console.log(productoDelCarrito);
+  } else {
+    carrito.push(producto);
+    console.log(carrito);
+
+  }
+}
 
 const $renderCards = document.getElementById("renderCards");
 let cardContainer = document.createElement("div");
@@ -122,6 +136,9 @@ PRODUCTOS.forEach((producto) => {
                       </div>
                     </div>`
 
-                    $renderCards.append(cardContainer);
-                    cardContainer.append(card);
-                  });
+  $renderCards.append(cardContainer);
+  cardContainer.append(card);
+  card.querySelector("button").addEventListener("click", () => {
+    agregarProductoACarrito(producto.id)
+  })
+});
