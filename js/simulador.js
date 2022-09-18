@@ -1,4 +1,4 @@
-  
+/*   
  const quieresComprar = () => {
    while (eleccion != "si" && eleccion != "no") {
      alert("Ingresa si o no")
@@ -87,3 +87,41 @@
     buyAgain = false;
    };
  } while (buyAgain);
+ */
+
+//-----------------------------------------------------
+
+
+const $renderCards = document.getElementById("renderCards");
+let cardContainer = document.createElement("div");
+cardContainer.classList.add("row");
+cardContainer.classList.add("row-cols-1");
+cardContainer.classList.add("row-cols-md-3");
+cardContainer.classList.add("g-4");
+cardContainer.classList.add("my-3");
+
+
+PRODUCTOS.forEach((producto) => {
+  let card = document.createElement("div");
+
+  card.innerHTML = `
+  <div class="col">
+                      <div class="card h-100">
+                        <img src="${producto.imagen}" class="card-img-top" alt="tu mundo digital">
+                        <div class="card-body">
+                          <h5 class="card-title">${producto.descripcion}</h5>
+                          <p class="card-text">$${producto.precio}</p>
+                          <p class="card-text">Stock disponible: ${producto.stock}</p>
+                          <p class="card-text">Impuesto Incluido</p>
+                          <div class="input-group mb-3 w-75">
+                            <span class="input-group-text">Cantidad</span>
+                            <input type="number" class="form-control">
+                          </div>
+                          <button type="button" class="btn btn-warning" id="${producto.id}" >Agregar al Carrito</button>
+                        </div>
+                      </div>
+                    </div>`
+
+                    $renderCards.append(cardContainer);
+                    cardContainer.append(card);
+                  });
