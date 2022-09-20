@@ -91,20 +91,6 @@
 
 //-----------------------------------------------------
 
-//Funcion para agregar producto a carrito
-const agregarProductoACarrito = (id) => {
-  let producto = PRODUCTOS.find(prod => prod.id === id)
-  let productoDelCarrito = carrito.find(prod => prod.id === producto.id);
-
-  if (productoDelCarrito) {
-    productoDelCarrito.cantidad++
-    console.log(productoDelCarrito);
-  } else {
-    carrito.push(producto);
-    console.log(carrito);
-
-  }
-}
 
 const $renderCards = document.getElementById("renderCards");
 let cardContainer = document.createElement("div");
@@ -114,31 +100,41 @@ cardContainer.classList.add("row-cols-md-3");
 cardContainer.classList.add("g-4");
 cardContainer.classList.add("my-3");
 
-
-PRODUCTOS.forEach((producto) => {
-  let card = document.createElement("div");
-
-  card.innerHTML = `
-  <div class="col">
-                      <div class="card h-100">
-                        <img src="${producto.imagen}" class="card-img-top" alt="tu mundo digital">
-                        <div class="card-body">
-                          <h5 class="card-title">${producto.descripcion}</h5>
-                          <p class="card-text">$${producto.precio}</p>
-                          <p class="card-text">Stock disponible: ${producto.stock}</p>
-                          <p class="card-text">Impuesto Incluido</p>
-                          <div class="input-group mb-3 w-75">
-                            <span class="input-group-text">Cantidad</span>
-                            <input type="number" class="form-control">
+//Entiendo lo que hace el foreach, que reitera sobre cada elemento del array. pero no entiendo porque si yo en la linea 123 "imprimo" dentro de $rendercards cardContainer. No se supone que me deberia imprimir la cardContainer de a cuerdo a cuantos productos tenga??Porque solo me la imprime una vez, y en cambio a la card me la imprime cada vez que ingreso un producto al array PRODUCTOS.
+//Evento cuando hacen click en "Ver todos los productos"
+const verProductos = document.getElementById("verProductos").addEventListener("click", () => {
+  PRODUCTOS.forEach((producto) => {
+    let card = document.createElement("div");
+    card.classList.add("col");
+    card.innerHTML = `
+                      
+                        <div class="card h-100">
+                          <img src="${producto.imagen}" class="card-img-top" alt="tu mundo digital">
+                          <div class="card-body">
+                            <h5 class="card-title">${producto.descripcion}</h5>
+                            <p class="card-text">$${producto.precio}</p>
+                            <p class="card-text">Stock disponible: ${producto.stock}</p>
+                            <p class="card-text">Impuesto Incluido</p>
+                            <div class="input-group mb-3 w-75">
+                            </div>
+                            <button type="button" class="btn btn-warning offset-3 w-50" id="${producto.id}" >Agregar al Carrito</button>
                           </div>
-                          <button type="button" class="btn btn-warning" id="${producto.id}" >Agregar al Carrito</button>
                         </div>
-                      </div>
-                    </div>`
-
-  $renderCards.append(cardContainer);
-  cardContainer.append(card);
-  card.querySelector("button").addEventListener("click", () => {
-    agregarProductoACarrito(producto.id)
-  })
-});
+                      `
+  
+    $renderCards.append(cardContainer);
+    cardContainer.append(card);
+    card.querySelector("button").addEventListener("click", () => {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Producto agregado al carrito',
+        showConfirmButton: false,
+        timer: 1000
+    })
+    });
+    card.querySelector("button").addEventListener("click", () => {
+      agregarProductoACarrito(producto.id)
+    });
+  });
+})
