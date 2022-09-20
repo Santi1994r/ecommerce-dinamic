@@ -22,8 +22,6 @@
  let fuenteGamemax600w80plus = new Producto(9, "FUENTE GAMEMAX 600W VP-600 80+ BRONZE RGB", 11, 13490, "../images/fuenteGamemax600w80plus.png", 1);
  let fuenteGamemax700w = new Producto(10, "FUENTE GAMEMAX 700W VP-600 80+ BRONZE RGB", 7, 13990, "../images/fuenteGamemax700w.png", 1);
 
-
-
  
  
  const PRODUCTOS = [
