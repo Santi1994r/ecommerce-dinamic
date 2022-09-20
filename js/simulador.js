@@ -124,6 +124,7 @@ const verProductos = document.getElementById("verProductos").addEventListener("c
   
     $renderCards.append(cardContainer);
     cardContainer.append(card);
+    
     card.querySelector("button").addEventListener("click", () => {
       Swal.fire({
         position: 'top-end',

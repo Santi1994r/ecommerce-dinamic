@@ -67,6 +67,13 @@ body {
 .filtros {
     color: white;
 }
+#verProductos:hover {
+    cursor: pointer;
+}
+
+.numeroDeCarrito {
+    font-size: 2rem;
+}
 /* ------FIN DE ESTILOS DE ARCHIVO PRODUCTOS.HTML---- */
 
 
