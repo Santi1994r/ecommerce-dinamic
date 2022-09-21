@@ -74,6 +74,18 @@ body {
 .numeroDeCarrito {
     font-size: 2rem;
 }
+
+.buttonCarrito {
+    background-color: #212121;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    position: fixed;
+    z-index: 1;
+}
+.buttonCarrito:hover {
+    background-color: #001;
+    box-shadow: 0 .2rem 1rem #FFF176;
+}
 /* ------FIN DE ESTILOS DE ARCHIVO PRODUCTOS.HTML---- */
 
 

@@ -127,7 +127,7 @@ const verProductos = document.getElementById("verProductos").addEventListener("c
     
     card.querySelector("button").addEventListener("click", () => {
       Swal.fire({
-        position: 'top-end',
+        position: 'top-center',
         icon: 'success',
         title: `${producto.descripcion} \nAgregado al carrito`,
         showConfirmButton: false,

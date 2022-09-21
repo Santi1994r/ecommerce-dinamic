@@ -42,6 +42,48 @@
   </nav>
   <!-- -------FIN DE NAV xxl-------- -->
 
+  <!-- ------button carrito---- -->
+  <div class="col carritoContainer">
+    <!-- Button modal -->
+    <button type="button" class="btn btn-secondary buttonCarrito" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <div class="carrito ">
+        <img class="sticky-top" src="../images/carrito-de-compras-yellow.png" alt="tu mundo digital"><span id="cantidadDeCompras" class="numeroDeCarrito">0</span>
+      </div>
+    </button>
+
+    <!-- Modal carrito-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- -----------------card dentro de modal---------------- -->
+            <div class="col">
+              <div class="card text-dark w-50 h-50">
+                <img class="card-img-top w-100" src="../images/fuenteGamemax700w.png" alt="fafa">
+                <div class="card-body">
+                  <h5 class="card-title">Ryzen 5</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-danger">Eliminar</a>
+                </div>
+              </div>
+            </div>
+            <!-- ----------fin de card dentro de modal--------------- -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Finalizar compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ----Fin modal Carrito---- -->
+  </div>
+  <!-- ------fin de button carrito---- -->
+
   <!-- -------Seccion de Productos------ -->
   <section class="container">
     <div class="row">
@@ -50,46 +92,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col carritoContainer">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <div class="carrito sticky-top">
-            <img class="sticky-top" src="../images/carrito-de-compras-yellow.png" alt="tu mundo digital"><span id="cantidadDeCompras" class="numeroDeCarrito">0</span>
-          </div>
-        </button>
-
-        <!-- Modal carrito-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <!-- -----------------modal---------------- -->
-                <div class="col">
-                  <div class="card text-dark" style="width: 50%;">
-                    <img class="card-img-top w-100" src="../images/fuenteGamemax700w.png" alt="fafa">
-                    <div class="card-body">
-                      <h5 class="card-title">Ryzen 5</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-danger">Eliminar</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- ----------fin modal--------------- -->
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Finalizar compra</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- ----Fin modal Carrito---- -->
-        
-      </div>
+      
     </div>
     <div class="row">
       <div class="col-2 filtrosContainer">
