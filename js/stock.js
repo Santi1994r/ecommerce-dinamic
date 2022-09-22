@@ -34,7 +34,8 @@
    ssd240gb,
    hdd2tbSeagate,
    fuenteGamemax600w80plus,
+   fuenteGamemax700w,
    fuenteGamemax700w
  ];
-
+console.log(microAmd5.id);
  const carrito = [];
