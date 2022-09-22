@@ -101,8 +101,8 @@ cardContainer.classList.add("g-4");
 cardContainer.classList.add("my-3");
 
 //Entiendo lo que hace el foreach, que reitera sobre cada elemento del array. pero no entiendo porque si yo en la linea 123 "imprimo" dentro de $rendercards cardContainer. No se supone que me deberia imprimir la cardContainer de a cuerdo a cuantos productos tenga??Porque solo me la imprime una vez, y en cambio a la card me la imprime cada vez que ingreso un producto al array PRODUCTOS.
-//Evento cuando hacen click en "Ver todos los productos"
-const verProductos = document.getElementById("verProductos").addEventListener("click", () => {
+//evento que se ejecuta cuando se carga la pagina
+document.addEventListener("DOMContentLoaded", () => {
   PRODUCTOS.forEach((producto) => {
     let card = document.createElement("div");
     card.classList.add("col");
@@ -127,11 +127,11 @@ const verProductos = document.getElementById("verProductos").addEventListener("c
     
     card.querySelector("button").addEventListener("click", () => {
       Swal.fire({
-        position: 'top-center',
+        position: 'center',
         icon: 'success',
         title: `${producto.descripcion} \nAgregado al carrito`,
         showConfirmButton: false,
-        timer: 1800
+        timer: 1400
     })
     });
     card.querySelector("button").addEventListener("click", () => {

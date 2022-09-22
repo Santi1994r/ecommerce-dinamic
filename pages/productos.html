@@ -45,7 +45,7 @@
   <!-- ------button carrito---- -->
   <div class="col carritoContainer">
     <!-- Button modal -->
-    <button type="button" class="btn btn-secondary buttonCarrito" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button id="buttonCarritoJS" type="button" class="btn btn-secondary buttonCarrito" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <div class="carrito ">
         <img class="sticky-top" src="../images/carrito-de-compras-yellow.png" alt="tu mundo digital"><span id="cantidadDeCompras" class="numeroDeCarrito">0</span>
       </div>
@@ -56,26 +56,26 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+            <h5 class="modal-title text-dark" id="exampleModalLabel">Carrito De Compras</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            <!-- -----------------card dentro de modal---------------- -->
-            <div class="col">
-              <div class="card text-dark w-50 h-50">
-                <img class="card-img-top w-100" src="../images/fuenteGamemax700w.png" alt="fafa">
-                <div class="card-body">
-                  <h5 class="card-title">Ryzen 5</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-danger">Eliminar</a>
+          <div class="modal-body" id="productoDelCarrito">
+            <!-- ----cards dinamicas dentro del carrito del modal--- -->
+            
+            <!-- ----fin de cards dinamicas dentro de modal------- -->
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="modal-footer">
+                <div class="col">
+                  <p class=" text-danger">Total de los productos: $<span class=" text-danger" id="imprimirTotalDelCarrito">0</span></p>
                 </div>
               </div>
             </div>
-            <!-- ----------fin de card dentro de modal--------------- -->
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Finalizar compra</button>
+            <button type="button" class="btn btn-primary" id="finalizarCompra">Finalizar compra</button>
           </div>
         </div>
       </div>
@@ -88,11 +88,8 @@
   <section class="container">
     <div class="row">
       <div class="col">
-        <h1 class="tituloProductos" id="verProductos">Ver Todos los Productos</h1>
+        <h1 class="tituloProductos">Todos los Productos</h1>
       </div>
-    </div>
-    <div class="row">
-      
     </div>
     <div class="row">
       <div class="col-2 filtrosContainer">
@@ -105,119 +102,6 @@
 
       </div>
     </div>
-    <!-- ----------wqeqweqweqw----------------------------- -->
-    <!-- <div class="row">
-            <div class="col-2">
-
-            </div>
-            <div class="col">
-                !-- ----3 cards 2da fila- --
-                <div class="row row-cols-1 row-cols-md-3 g-4 my-3">
-                    <div class="col">
-                      <div class="card h-100">
-                        <img src="../images/gabineteRGB.png" class="card-img-top" alt="tu mundo digital">
-                        <div class="card-body">
-                          <h5 class="card-title">GABINETE RAIDMAX F01 RGB 4 FAN INCLUIDOS RGB TEMPLADO</h5>
-                          <p class="card-text">$18900</p>
-                          <p class="card-text">Impuesto Incluido</p>
-                          <div class="input-group mb-3 w-75">
-                            <span class="input-group-text">Cantidad</span>
-                            <input type="number" class="form-control">
-                          </div>
-                          <button type="button" class="btn btn-warning">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="card h-100">
-                        <img src="../images/gabineteThyphoon.png" class="card-img-top my-3" alt="tu mundo digital">
-                        <div class="card-body">
-                            <h5 class="card-title my-4">GABINETE GAMEMAX TYPHOON COC FAN ARGB</h5>
-                            <p class="card-text">$11900</p>
-                            <p class="card-text">Impuesto Incluido</p>
-                            <div class="input-group mb-3 w-75">
-                              <span class="input-group-text">Cantidad</span>
-                              <input type="number" class="form-control">
-                            </div>
-                            <button type="button" class="btn btn-warning">Agregar al Carrito</button>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="card h-100">
-                        <img src="../images/gabineteBlanco.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">GABINETE THERMALTAKE H200 TG RGB SNOW</h5>
-                            <p class="card-text">$18900</p>
-                            <p class="card-text">Impuesto Incluido</p>
-                            <div class="input-group mb-3 w-75">
-                              <span class="input-group-text">Cantidad</span>
-                              <input type="number" class="form-control">
-                            </div>
-                            <button type="button" class="btn btn-warning">Agregar al Carrito</button>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  -- ---Fin de tres cards 2da fila- 
-            </div>
-        </div> -->
-    <!-- <div class="row">
-            <div class="col-2">
-
-            </div>
-            <div class="col">
-                !-- ----3 cards 3ra fila- --
-                <div class="row row-cols-1 row-cols-md-3 g-4 my-3">
-                    <div class="col">
-                      <div class="card h-100">
-                        <img src="../images/motherB450.png" class="card-img-top" alt="tu mundo digital">
-                        <div class="card-body">
-                          <h5 class="card-title my-5">MOTHERBOARD MSI B450M PRO-M2 MAX AM4</h5>
-                          <p class="card-text">$18980</p>
-                          <p class="card-text">Impuesto Incluido</p>
-                          <div class="input-group mb-3 w-75">
-                            <span class="input-group-text">Cantidad</span>
-                            <input type="number" class="form-control">
-                          </div>
-                          <button type="button" class="btn btn-warning">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="card h-100">
-                        <img src="../images/motherAsus.png" class="card-img-top my-3" alt="tu mundo digital">
-                        <div class="card-body">
-                            <h5 class="card-title my-4">MOTHERBOARD ASUS Z590 TUF PLUS GAMING WIFI 1200</h5>
-                            <p class="card-text">$32800</p>
-                            <p class="card-text">Impuesto Incluido</p>
-                            <div class="input-group mb-3 w-75">
-                              <span class="input-group-text">Cantidad</span>
-                              <input type="number" class="form-control">
-                            </div>
-                            <button type="button" class="btn btn-warning">Agregar al Carrito</button>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="card h-100">
-                        <img src="../images/motherAsusPrime.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title my-5">MOTHERBOARD ASUS A320M-K AM4</h5>
-                            <p class="card-text">$13490</p>
-                            <p class="card-text">Impuesto Incluido</p>
-                            <div class="input-group mb-3 w-75">
-                              <span class="input-group-text">Cantidad</span>
-                              <input type="number" class="form-control">
-                            </div>
-                            <button type="button" class="btn btn-warning">Agregar al Carrito</button>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  !-- ---Fin de tres cards 3ra fila- --
-            </div>
-        </div> -->
   </section>
   <!-- -------Fin de Seccion de Productos------ -->
 

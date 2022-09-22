@@ -42,6 +42,7 @@ body {
 .video {
     width: 80%;
 }
+/* -----Fin de Index-MENU-------- */
 
 /* ------ESTILOS DE ARCHIVO PRODUCTOS.HTML---- */
 .tituloProductos {
@@ -67,11 +68,9 @@ body {
 .filtros {
     color: white;
 }
-#verProductos:hover {
-    cursor: pointer;
-}
 
 .numeroDeCarrito {
+    margin-left: .1rem;
     font-size: 2rem;
 }
 
@@ -91,7 +90,7 @@ body {
 
 
 
-/* --------Media Query------ */
+/* --------Media Query mobile------ */
 @media (max-width: 576px) {
     .soloXXL {
         display: none !important;
