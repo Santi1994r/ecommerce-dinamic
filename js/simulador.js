@@ -1,18 +1,16 @@
 
-
-const $renderCards = document.getElementById("renderCards");
-let cardContainer = document.createElement("div");
-cardContainer.classList.add("row");
-cardContainer.classList.add("row-cols-1");
-cardContainer.classList.add("row-cols-md-3");
-cardContainer.classList.add("g-4");
-cardContainer.classList.add("my-3");
-
-
 //evento que se ejecuta cuando se carga la pagina
 document.addEventListener("DOMContentLoaded", () => {
+  const $renderCards = document.getElementById("renderCards");
+  let cardContainer = document.createElement("div");
+  cardContainer.classList.add("row");
+  cardContainer.classList.add("row-cols-1");
+  cardContainer.classList.add("row-cols-md-3");
+  cardContainer.classList.add("g-4");
+  cardContainer.classList.add("my-3");
+
   PRODUCTOS.forEach((producto) => {
-    let card = document.createElement("div");
+    card = document.createElement("div");
     card.classList.add("col");
     card.innerHTML = `
                       
@@ -29,9 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
                           </div>
                         </div>
                       `
-  
+
     $renderCards.append(cardContainer);
     cardContainer.append(card);
+    
     
     card.querySelector("button").addEventListener("click", () => {
       Swal.fire({
@@ -40,10 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
         title: `${producto.descripcion} \nAgregado al carrito`,
         showConfirmButton: false,
         timer: 1400
-    })
+      })
     });
     card.querySelector("button").addEventListener("click", () => {
-      agregarProductoACarrito(producto.id)
+      agregarProductoACarrito(producto.id);
     });
   });
-})
+});
