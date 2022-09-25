@@ -1,6 +1,6 @@
 
 //evento que se ejecuta cuando se carga la pagina
-document.addEventListener("DOMContentLoaded", () => {
+const mostrarTodo = document.addEventListener("DOMContentLoaded", () => {
   const $renderCards = document.getElementById("renderCards");
   let cardContainer = document.createElement("div");
   cardContainer.classList.add("row");
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     card.classList.add("col");
     card.innerHTML = `
                       
-                        <div class="card h-100">
+                        <div class="card h-100 shadowYellow">
                           <img src="${producto.imagen}" class="card-img-top" alt="tu mundo digital">
                           <div class="card-body">
                             <h5 class="card-title">${producto.descripcion}</h5>
