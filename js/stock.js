@@ -34,14 +34,14 @@
    fuenteGamemax600w80plus,
    fuenteGamemax700w
  ];
- 
+
  const carrito = [];
 
  const FILTROS = [
   "Todos",
   "Micropocesadores",
   "Gabinetes",
-  "Discos SSD",
-  "Discos HDD",
+  "Discos Solidos",
+  "Discos Duros",
   "Fuentes"
 ];

@@ -95,6 +95,13 @@ body {
 .shadowYellow:hover {
     box-shadow: 0 .3rem .9rem #FFF176;
 }
+
+.filtroMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
 /* ------FIN DE ESTILOS DE ARCHIVO PRODUCTOS.HTML---- */
 
 
@@ -132,6 +139,9 @@ body {
     .video {
         width: 100%;
     }
+
+    #filtrosContainer {
+        display: none;
+    }    
 }
 
-;

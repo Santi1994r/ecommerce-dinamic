@@ -1,18 +1,18 @@
+const mostrarTodosLosProductos = () => {
+  //evento que se ejecuta cuando se carga la pagina
+  document.addEventListener("DOMContentLoaded", () => {
+    const $renderCards = document.getElementById("renderCards");
+    let cardContainer = document.createElement("div");
+    cardContainer.classList.add("row");
+    cardContainer.classList.add("row-cols-1");
+    cardContainer.classList.add("row-cols-md-3");
+    cardContainer.classList.add("g-4");
+    cardContainer.classList.add("my-3");
 
-//evento que se ejecuta cuando se carga la pagina
-const mostrarTodo = document.addEventListener("DOMContentLoaded", () => {
-  const $renderCards = document.getElementById("renderCards");
-  let cardContainer = document.createElement("div");
-  cardContainer.classList.add("row");
-  cardContainer.classList.add("row-cols-1");
-  cardContainer.classList.add("row-cols-md-3");
-  cardContainer.classList.add("g-4");
-  cardContainer.classList.add("my-3");
-
-  PRODUCTOS.forEach((producto) => {
-    card = document.createElement("div");
-    card.classList.add("col");
-    card.innerHTML = `
+    PRODUCTOS.forEach((producto) => {
+      card = document.createElement("div");
+      card.classList.add("col");
+      card.innerHTML = `
                       
                         <div class="card h-100 shadowYellow">
                           <img src="${producto.imagen}" class="card-img-top" alt="tu mundo digital">
@@ -28,21 +28,24 @@ const mostrarTodo = document.addEventListener("DOMContentLoaded", () => {
                         </div>
                       `
 
-    $renderCards.append(cardContainer);
-    cardContainer.append(card);
-    
-    
-    card.querySelector("button").addEventListener("click", () => {
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: `${producto.descripcion} \nAgregado al carrito`,
-        showConfirmButton: false,
-        timer: 1400
-      })
-    });
-    card.querySelector("button").addEventListener("click", () => {
-      agregarProductoACarrito(producto.id);
+      $renderCards.append(cardContainer);
+      cardContainer.append(card);
+
+
+      card.querySelector("button").addEventListener("click", () => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: `${producto.descripcion} \nAgregado al carrito`,
+          showConfirmButton: false,
+          timer: 1400
+        })
+      });
+      card.querySelector("button").addEventListener("click", () => {
+        agregarProductoACarrito(producto.id);
+      });
     });
   });
-});
+};
+
+mostrarTodosLosProductos();
