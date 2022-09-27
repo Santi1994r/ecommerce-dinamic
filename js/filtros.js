@@ -1,8 +1,7 @@
 const filtrar = (index) => {
     switch (index) {
         case 0:
-            alert("Todos");
-            mostrarTodosLosProductos();
+            reimprimirProdFilt(PRODUCTOS);
             break;
         default:
             reimprimirProdFilt(funcionParaFiltrar(index));
