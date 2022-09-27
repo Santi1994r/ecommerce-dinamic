@@ -1,3 +1,6 @@
+import { agregarProductoACarrito } from "./carrito.js";
+
+
 const filtrar = (index) => {
     switch (index) {
         case 0:
@@ -21,7 +24,7 @@ const reimprimirProdFilt = (array) => {
     cardContainer.classList.add("my-3");
     $renderCards.innerText = "";
     array.forEach((producto) => {
-        card = document.createElement("div");
+        let card = document.createElement("div");
         card.classList.add("col");
         card.innerHTML = `
                           

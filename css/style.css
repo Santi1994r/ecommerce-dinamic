@@ -24,7 +24,8 @@ body {
 
 .padreNavegador {
     background-color: #001;
-    height: 4rem;
+    height: 5rem;
+    box-shadow: 0 .2rem .9rem #000;
 }
 
 .navegador {

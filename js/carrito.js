@@ -1,3 +1,5 @@
+import { guardarCarritoEnStoraje } from "./storaje.js";
+
 
 //Funcion para agregar producto a carrito
 let contadorDeCompras = document.getElementById("cantidadDeCompras");
@@ -23,6 +25,7 @@ const agregarProductoACarrito = (id) => {
     }
     imprimirProductosDelCarrito();
     mostrarTotalDelCarrito();
+    guardarCarritoEnStoraje(carrito);
 };
 //Funcion para eliminar de a uno la cantidad de cada producto
 const eliminarProductoDelCarrito = (index) => {
@@ -34,7 +37,6 @@ const eliminarProductoDelCarrito = (index) => {
         carrito.splice(index, 1);
     } 
     actualizarProductosEnCarrito();
-    //console.log(microAmd5);
     console.log(carrito);    
 };
 
@@ -112,3 +114,5 @@ const imprimirProductosDelCarrito = () => {
 
     });
 };
+
+export { agregarProductoACarrito }

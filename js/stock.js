@@ -39,7 +39,7 @@
 
  const FILTROS = [
   "Todos",
-  "Micropocesadores",
+  "Microprocesadores",
   "Gabinetes",
   "Discos Solidos",
   "Discos Duros",

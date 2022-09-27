@@ -1,3 +1,6 @@
+import { agregarProductoACarrito } from "./carrito.js";
+import { obtenerCarritoDeStoraje } from "./storaje.js";
+
 const crearTodosLosProductos = (array) => {
   const $renderCards = document.getElementById("renderCards");
   let cardContainer = document.createElement("div");
@@ -8,7 +11,7 @@ const crearTodosLosProductos = (array) => {
   cardContainer.classList.add("my-3");
 
   array.forEach((producto) => {
-    card = document.createElement("div");
+    let card = document.createElement("div");
     card.classList.add("col");
     card.innerHTML = `
                     
@@ -49,6 +52,9 @@ const crearTodosLosProductos = (array) => {
 const mostrarTodosLosProductos = () => {
   //evento que se ejecuta cuando se carga la pagina
   document.addEventListener("DOMContentLoaded", () => {
+    //console.log(obtenerCarritoDeStoraje());
+    //obtenerCarritoDeStoraje();
+    obtenerCarritoDeStoraje();
     crearTodosLosProductos(PRODUCTOS);
   });
 };
