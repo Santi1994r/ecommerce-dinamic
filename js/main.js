@@ -1,5 +1,7 @@
 import { agregarProductoACarrito } from "./carrito.js";
 import { obtenerCarritoDeStoraje } from "./storaje.js";
+import { PRODUCTOS } from "./stock.js";
+
 
 const crearTodosLosProductos = (array) => {
   const $renderCards = document.getElementById("renderCards");
@@ -52,9 +54,6 @@ const crearTodosLosProductos = (array) => {
 const mostrarTodosLosProductos = () => {
   //evento que se ejecuta cuando se carga la pagina
   document.addEventListener("DOMContentLoaded", () => {
-    //console.log(obtenerCarritoDeStoraje());
-    //obtenerCarritoDeStoraje();
-    obtenerCarritoDeStoraje();
     crearTodosLosProductos(PRODUCTOS);
   });
 };

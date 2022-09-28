@@ -1,12 +1,17 @@
+import { obtenerCarritoDeStoraje } from "./storaje.js";
+
+
 //clase constructora de objetos
  class Producto {
-   constructor(id, descripcion, stock, precio, imagen, cantidad) {
+   constructor(id, descripcion, stock, precio, imagen, cantidad, categoria) {
      this.id = id;
      this.descripcion = descripcion;
      this.stock = stock;
      this.precio = precio;
      this.imagen = imagen;
      this.cantidad = cantidad;
+     this.categoria = categoria;
+
    }
  };
 
@@ -35,7 +40,7 @@
    fuenteGamemax700w
  ];
 
- const carrito = [];
+ let carrito = [];
 
  const FILTROS = [
   "Todos",
@@ -45,3 +50,5 @@
   "Discos Duros",
   "Fuentes"
 ];
+
+export { PRODUCTOS, FILTROS, carrito };

@@ -1,4 +1,6 @@
 import { agregarProductoACarrito } from "./carrito.js";
+import { PRODUCTOS, FILTROS } from "./stock.js";
+import { obtenerCarritoDeStoraje } from "./storaje.js";
 
 
 const filtrar = (index) => {
@@ -70,15 +72,14 @@ const funcionParaFiltrar = (indice) => {
 };
 
 const renderizarFiltros = () => {
-    const filtrosContainer = document.getElementById("filtrosContainer");
+    const $filtrosContainer = document.getElementById("filtrosContainer");
     const $ul = document.createElement("ul");
     $ul.classList.add("filtroMobile");
-    filtrosContainer.append($ul);
+    $filtrosContainer.append($ul);
     FILTROS.forEach((filtro, index) => {
         const $li = document.createElement("li");
         $li.classList.add("text-light");
         $li.classList.add("my-2");
-
         $li.innerHTML = `
         <a href="#">${filtro}</a>
         `;
@@ -87,7 +88,8 @@ const renderizarFiltros = () => {
             filtrar(index);
         });
     });
-
 };
 
 renderizarFiltros();
+
+//ver metodos dentro de objetos

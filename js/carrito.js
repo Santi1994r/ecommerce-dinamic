@@ -1,4 +1,5 @@
-import { guardarCarritoEnStoraje } from "./storaje.js";
+import { guardarCarritoEnStoraje, obtenerCarritoDeStoraje } from "./storaje.js";
+import { PRODUCTOS, carrito } from "./stock.js";
 
 
 //Funcion para agregar producto a carrito
@@ -15,7 +16,6 @@ const agregarProductoACarrito = (id) => {
             productosDelCarrito.stock--;
             contadorDeCompras.innerText++;
         }
-        //intento que imprima el nuevo stock pero no me sale(productoDelCarrito.stock).innerText = productoDelCarrito.stock
         console.log(carrito);
     } else {
         contadorDeCompras.innerText++;
@@ -26,18 +26,20 @@ const agregarProductoACarrito = (id) => {
     imprimirProductosDelCarrito();
     mostrarTotalDelCarrito();
     guardarCarritoEnStoraje(carrito);
+
 };
 //Funcion para eliminar de a uno la cantidad de cada producto
 const eliminarProductoDelCarrito = (index) => {
     carrito[index].cantidad--;
-    contadorDeCompras.innerText--;
     carrito[index].stock++;
+    contadorDeCompras.innerText--;
     if (carrito[index].cantidad === 0) {
         carrito[index].cantidad = 1;
         carrito.splice(index, 1);
-    } 
+    }
     actualizarProductosEnCarrito();
-    console.log(carrito);    
+    guardarCarritoEnStoraje(carrito);
+    console.log(carrito);
 };
 
 //Funcion para mostrar la suma de todos los productos del carrito cuando se le da click a finalizar compra
@@ -108,7 +110,7 @@ const imprimirProductosDelCarrito = () => {
 
             divContainer.append(card);
             card.querySelector("button").addEventListener("click", () => {
-            eliminarProductoDelCarrito(index);
+                eliminarProductoDelCarrito(index);
             });
         });
 
@@ -116,3 +118,4 @@ const imprimirProductosDelCarrito = () => {
 };
 
 export { agregarProductoACarrito }
+export { carrito }
