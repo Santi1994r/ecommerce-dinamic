@@ -4,14 +4,9 @@ import { obtenerCarritoDeStoraje } from "./storaje.js";
 
 
 const filtrar = (index) => {
-    switch (index) {
-        case 0:
-            reimprimirProdFilt(PRODUCTOS);
-            break;
-        default:
-            reimprimirProdFilt(funcionParaFiltrar(index));
-            break;
-    };
+    (index === 0)
+    ? reimprimirProdFilt(PRODUCTOS)     
+    : reimprimirProdFilt(funcionParaFiltrar(index));
 };
 
 //funcion para "reimprimir" los productos filtrados

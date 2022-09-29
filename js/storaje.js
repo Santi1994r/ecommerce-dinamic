@@ -9,5 +9,4 @@ const obtenerCarritoDeStoraje = () => {
     const carritoStoraje = JSON.parse(localStorage.getItem("carrito"));
     return carritoStoraje;
 };
-console.log(obtenerCarritoDeStoraje());
 export { guardarCarritoEnStoraje , obtenerCarritoDeStoraje }

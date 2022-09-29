@@ -34,7 +34,6 @@ const crearTodosLosProductos = (array) => {
     $renderCards.append(cardContainer);
     cardContainer.append(card);
 
-
     card.querySelector("button").addEventListener("click", () => {
       Swal.fire({
         position: 'center',

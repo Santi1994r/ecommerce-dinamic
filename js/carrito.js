@@ -4,6 +4,8 @@ import { PRODUCTOS, carrito } from "./stock.js";
 
 //Funcion para agregar producto a carrito
 let contadorDeCompras = document.getElementById("cantidadDeCompras");
+contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+
 const agregarProductoACarrito = (id) => {
     let productoAniadido = PRODUCTOS.find(prod => prod.id === id);
     let productosDelCarrito = carrito.find(prod => prod.id === productoAniadido.id);
@@ -14,13 +16,14 @@ const agregarProductoACarrito = (id) => {
         } else {
             productosDelCarrito.cantidad++;
             productosDelCarrito.stock--;
-            contadorDeCompras.innerText++;
+            contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+            console.log(carrito);
         }
-        console.log(carrito);
+        //console.log(carrito);
     } else {
-        contadorDeCompras.innerText++;
         productoAniadido.stock--;
         carrito.push(productoAniadido);
+        contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
         console.log(carrito);
     }
     imprimirProductosDelCarrito();
@@ -55,6 +58,7 @@ const totalDeCompra = () => {
     const total = carrito.reduce((acc, elem) => acc + elem.precio * elem.cantidad, 0);
     return total;
 };
+
 //Funcion para actualizar productos una vez que vas eliminando
 const actualizarProductosEnCarrito = () => {
     divContainer.innerText = "";
@@ -90,7 +94,7 @@ divContainer.classList.add("g-3");
 
 //renderizar productos agregados al carrito
 const imprimirProductosDelCarrito = () => {
-    const botonDeCarrito = document.getElementById("buttonCarritoJS").addEventListener("click", () => {
+    document.getElementById("buttonCarritoJS").addEventListener("click", () => {
         divContainer.innerText = "";
         productoDelCarrito.append(divContainer);
         carrito.forEach((prod, index) => {
@@ -116,6 +120,8 @@ const imprimirProductosDelCarrito = () => {
 
     });
 };
+imprimirProductosDelCarrito();
+
 
 export { agregarProductoACarrito }
 export { carrito }
