@@ -33,7 +33,7 @@ const crearTodosLosProductos = (array) => {
 
     $renderCards.append(cardContainer);
     cardContainer.append(card);
-
+    //Probar sacar la alerta de aca y ponerla directamente cuando se va, agregando productos
     card.querySelector("button").addEventListener("click", () => {
       Swal.fire({
         position: 'center',
@@ -51,7 +51,6 @@ const crearTodosLosProductos = (array) => {
 
 
 const mostrarTodosLosProductos = () => {
-  //evento que se ejecuta cuando se carga la pagina
   document.addEventListener("DOMContentLoaded", () => {
     crearTodosLosProductos(PRODUCTOS);
   });
