@@ -3,10 +3,11 @@ import { PRODUCTOS, FILTROS } from "./stock.js";
 import { obtenerCarritoDeStoraje } from "./storaje.js";
 
 
-const filtrar = (index) => {
+const filtrar = (filtro, index) => {
+    console.log(index);
     (index === 0)
     ? reimprimirProdFilt(PRODUCTOS)     
-    : reimprimirProdFilt(funcionParaFiltrar(index));
+    : reimprimirProdFilt(funcionParaFiltrar(filtro)); 
 };
 
 //funcion para "reimprimir" los productos filtrados
@@ -59,11 +60,9 @@ const reimprimirProdFilt = (array) => {
 };
 
 //funcion para filtrar los productos seleccionados. 
-const funcionParaFiltrar = (indice) => {
-    const filteredProducts = FILTROS.find((elem, index) => index === indice).toUpperCase();
-    const filtroRecortado = filteredProducts.slice(0, 6);
-    const filtrarStock = PRODUCTOS.filter(el => el.descripcion.includes(filtroRecortado));
-    return filtrarStock;
+const funcionParaFiltrar = (filtro) => {
+    const productosFiltrados = PRODUCTOS.filter(prod => prod.categoria === filtro);
+    return productosFiltrados;
 };
 
 const renderizarFiltros = () => {
@@ -80,11 +79,10 @@ const renderizarFiltros = () => {
         `;
         $ul.append($li);
         $li.querySelector("a").addEventListener("click", () => {
-            filtrar(index);
+            filtrar(filtro, index);
         });
     });
 };
 
 renderizarFiltros();
 
-//ver metodos dentro de objetos
