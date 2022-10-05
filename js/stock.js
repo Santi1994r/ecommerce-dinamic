@@ -25,18 +25,36 @@ import { obtenerCarritoDeStoraje } from "./storaje.js";
  let hdd2tbSeagate = new Producto(8, "DISCO DURO HDD 2TB SEAGATE BARRACUDA SATA III", 8, 10200, "../images/hdd2tbSeagate.png", 1, "Discos Duros");
  let fuenteGamemax600w80plus = new Producto(9, "FUENTE GAMEMAX 600W VP-600 80+ BRONZE RGB", 11, 13490, "../images/fuenteGamemax600w80plus.png", 1, "Fuentes");
  let fuenteGamemax700w = new Producto(10, "FUENTE GAMEMAX 700W VP-600 80+ BRONZE RGB", 7, 13990, "../images/fuenteGamemax700w.png", 1, "Fuentes");
+ let gabineteSharkoon = new Producto(11, "GABINETE SHARKOON REV100", 9, 10590, "../images/gabineteSharkoon.png", 1, "Gabinetes");
+ let discoduro2tb = new Producto(12, "DISCO DURO HDD 2 TB WD SATA III 64MB/S BLUE", 10, 10200, "../images/discoduro2tb.png", 1, "Discos Duros");
+ let monitor22samsung75hz = new Producto(13, "MONITOR 22 LED SAMSUNG T350 FHD IPS 5MS HDMI VGA 75HZ", 8, 51900, "../images/monitor22samsung75hz.png", 1, "Monitores");
+ let monitor24gigabyte165hz = new Producto(14, "MONITOR 24 GIGABYTE G24F FHD 1MS IPS 165HZ BLACK", 6, 74900, "../images/monitor24gigabyte165hz.png", 1, "Monitores");
+ let discoExterno2tbseagate = new Producto(15, "DISCO DURO EXTERNO 2TB SEAGATE BASIC USB 3.0", 6, 10990, "../images/discoExterno2tbseagate.png", 1, "Discos Externos");
+ let memoriaRam8gb2666mhzKingston = new Producto(16, "MEMORIA RAM DDR4 8GB 2666MHZ KINGSTON FURY BEAST RGB", 10, 9130, "../images/memoriaRam8gb2666mhzKingston.png", 1, "Memorias RAM PC");
+
+
+
+
+ 
+
  
  const PRODUCTOS = [
    microAmd5,
-   microAmd7,
-   microCoreI5,
    gabineteRaidmax,
-   gabineteThyphoon,
-   gabineteSnow,
-   ssd240gb,
+   monitor24gigabyte165hz,
    hdd2tbSeagate,
+   fuenteGamemax700w,
+   microCoreI5,
+   gabineteThyphoon,
+   discoExterno2tbseagate,
+   memoriaRam8gb2666mhzKingston,
+   gabineteSnow,
+   microAmd7,
+   ssd240gb,
    fuenteGamemax600w80plus,
-   fuenteGamemax700w
+   gabineteSharkoon,
+   discoduro2tb,
+   monitor22samsung75hz  
  ];
 
  let carrito = obtenerCarritoDeStoraje() || [];
@@ -47,7 +65,10 @@ import { obtenerCarritoDeStoraje } from "./storaje.js";
   "Gabinetes",
   "Discos Solidos",
   "Discos Duros",
-  "Fuentes"
+  "Fuentes",
+  "Monitores",
+  "Discos Externos",
+  "Memorias RAM PC"
 ];
 
 export { PRODUCTOS, FILTROS, carrito };

@@ -106,6 +106,25 @@ body {
 /* ------FIN DE ESTILOS DE ARCHIVO PRODUCTOS.HTML---- */
 
 
+/* ------ESTILOS DE ARCHIVO CONTACTO.HTML---- */
+    .contWapp {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .wapp {
+        width: 2.3rem;
+        margin: .5rem;
+    }
+
+    .contMapa {
+        display: flex;
+        justify-content: center;
+      }
+/* ------FIN DE ESTILOS DE ARCHIVO CONTACTO.HTML---- */
+
+
 
 
 /* --------Media Query mobile------ */
