@@ -1,0 +1,39 @@
+
+[
+    {
+        "id" : 1 ,
+         "descripcion" : "MICROPROCESADOR CPU AMD RYZEN 5 5600 6/12 ZEN3",
+         "stock" : 3,
+         "precio" : 43900,
+         "imagen" : "../images/ryzen5.png",
+         "cantidad" : 1,
+         "categoria" : "Microprocesadores"
+    },
+    {
+        "id" : 6 ,
+         "descripcion" : "GABINETE THERMALTAKE H200 TG RGB SNOW",
+         "stock" : 6,
+         "precio" : 18900,
+         "imagen" : "../images/gabineteBlanco.png",
+         "cantidad" : 1,
+         "categoria" : "Gabinetes"
+    },
+    {
+        "id" : 7 ,
+         "descripcion" : "DISCO SOLIDO SSD 240 GB GIGABYTE SATA III GP-GSTF",
+         "stock" : 15,
+         "precio" : 5800,
+         "imagen" : "../images/ssd240gb.png",
+         "cantidad" : 1,
+         "categoria" : "Discos Solidos"
+    },
+    {
+        "id" :  13,
+         "descripcion" : "MONITOR 22 LED SAMSUNG T350 FHD IPS 5MS HDMI VGA 75HZ",
+         "stock" : 8,
+         "precio" : 51900,
+         "imagen" : "../images/monitor22samsung75hz.png",
+         "cantidad" : 1,
+         "categoria" : "Monitores"
+    }
+  ]

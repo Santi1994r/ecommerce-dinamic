@@ -17,7 +17,6 @@ const crearTodosLosProductos = (array) => {
     let card = document.createElement("div");
     card.classList.add("col");
     card.innerHTML = `
-                    
                       <div class="card h-100 shadowYellow">
                         <img src="${producto.imagen}" class="card-img-top" alt="tu mundo digital">
                         <div class="card-body">
@@ -63,4 +62,4 @@ const mostrarTodosLosProductos = () => {
   });
 };
 
-mostrarTodosLosProductos();
+//mostrarTodosLosProductos();

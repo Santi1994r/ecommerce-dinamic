@@ -4,10 +4,10 @@ import { obtenerCarritoDeStoraje } from "./storaje.js";
 
 
 const filtrar = (filtro, index) => {
-    console.log(index);
+    console.log(filtrarPorCategoria());
     (index === 0)
     ? reimprimirProdFilt(PRODUCTOS)     
-    : reimprimirProdFilt(funcionParaFiltrar(filtro)); 
+    : reimprimirProdFilt(filtrarPorCategoria(filtro)); 
 };
 
 //funcion para "reimprimir" los productos filtrados
@@ -60,7 +60,7 @@ const reimprimirProdFilt = (array) => {
 };
 
 //funcion para filtrar los productos seleccionados. 
-const funcionParaFiltrar = (filtro) => {
+const filtrarPorCategoria = (filtro) => {
     const productosFiltrados = PRODUCTOS.filter(prod => prod.categoria === filtro);
     return productosFiltrados;
 };
