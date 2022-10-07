@@ -3,6 +3,7 @@ import { obtenerCarritoDeStoraje } from "./storaje.js";
 import { PRODUCTOS } from "./stock.js";
 
 
+
 const crearTodosLosProductos = (array) => {
   const $renderCards = document.getElementById("renderCards");
   let cardContainer = document.createElement("div");
@@ -30,12 +31,17 @@ const crearTodosLosProductos = (array) => {
                         </div>
                       </div>
                     `
-
+    //Empezar arreglo de alert cada vez que agrega un producto
     $renderCards.append(cardContainer);
     cardContainer.append(card);
     //Probar sacar la alerta de aca y ponerla directamente cuando se va, agregando productos
     card.querySelector("button").addEventListener("click", () => {
-      Swal.fire({
+      (producto.stock === 0)
+      ? Swal.fire({
+        icon: 'error',
+        title: 'No hay mas stock del producto',
+      })
+      : Swal.fire({
         position: 'center',
         icon: 'success',
         title: `${producto.descripcion} \nAgregado al carrito`,
@@ -43,6 +49,7 @@ const crearTodosLosProductos = (array) => {
         timer: 1400
       })
     });
+    
     card.querySelector("button").addEventListener("click", () => {
       agregarProductoACarrito(producto.id);
     });

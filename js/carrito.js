@@ -6,20 +6,20 @@ import { PRODUCTOS, carrito } from "./stock.js";
 let contadorDeCompras = document.getElementById("cantidadDeCompras");
 contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
 
+
 const agregarProductoACarrito = (id) => {
     let productoAniadido = PRODUCTOS.find(prod => prod.id === id);
     let productosDelCarrito = carrito.find(prod => prod.id === productoAniadido.id);
     if (productosDelCarrito) {
 
         if (productosDelCarrito.stock === 0) {
-            alert(`No hay mas stock del producto`);
+            productosDelCarrito.stock
         } else {
             productosDelCarrito.cantidad++;
             productosDelCarrito.stock--;
             contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
             console.log(carrito);
         }
-        //console.log(carrito);
     } else {
         productoAniadido.stock--;
         carrito.push(productoAniadido);
