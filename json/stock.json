@@ -1,39 +1,147 @@
-
 [
     {
-        "id" : 1 ,
-         "descripcion" : "MICROPROCESADOR CPU AMD RYZEN 5 5600 6/12 ZEN3",
-         "stock" : 3,
-         "precio" : 43900,
-         "imagen" : "../images/ryzen5.png",
-         "cantidad" : 1,
-         "categoria" : "Microprocesadores"
+        "id": 1,
+        "descripcion": "MICROPROCESADOR CPU AMD RYZEN 5 5600 6/12 ZEN3",
+        "stock": 3,
+        "precio": 43900,
+        "imagen": "../images/ryzen5.png",
+        "cantidad": 1,
+        "categoria": "Microprocesadores"
     },
     {
-        "id" : 6 ,
-         "descripcion" : "GABINETE THERMALTAKE H200 TG RGB SNOW",
-         "stock" : 6,
-         "precio" : 18900,
-         "imagen" : "../images/gabineteBlanco.png",
-         "cantidad" : 1,
-         "categoria" : "Gabinetes"
+        "id": 4,
+        "descripcion": "GABINETE RAIDMAX F01 RGB 4 FAN INCLUIDOS RGB TEMPLADO",
+        "stock": 5,
+        "precio": 18900,
+        "imagen": "../images/gabineteRGB.png",
+        "cantidad": 1,
+        "categoria": "Gabinetes"
     },
     {
-        "id" : 7 ,
-         "descripcion" : "DISCO SOLIDO SSD 240 GB GIGABYTE SATA III GP-GSTF",
-         "stock" : 15,
-         "precio" : 5800,
-         "imagen" : "../images/ssd240gb.png",
-         "cantidad" : 1,
-         "categoria" : "Discos Solidos"
+        "id": 14,
+        "descripcion": "MONITOR 24 GIGABYTE G24F FHD 1MS IPS 165HZ BLACK",
+        "stock": 6,
+        "precio": 74900,
+        "imagen": "../images/monitor24gigabyte165hz.png",
+        "cantidad": 1,
+        "categoria": "Monitores"
     },
     {
-        "id" :  13,
-         "descripcion" : "MONITOR 22 LED SAMSUNG T350 FHD IPS 5MS HDMI VGA 75HZ",
-         "stock" : 8,
-         "precio" : 51900,
-         "imagen" : "../images/monitor22samsung75hz.png",
-         "cantidad" : 1,
-         "categoria" : "Monitores"
+        "id": 2,
+        "descripcion": "MICROPROCESADOR AMD RYZEN 7 5700X 8/16 4.6GHZ S/G S/COOLER ZEN3",
+        "stock": 6,
+        "precio": 58900,
+        "imagen": "../images/ryzen7.png",
+        "cantidad": 1,
+        "categoria": "Microprocesadores"
+    },
+    {
+        "id": 3,
+        "descripcion": "MICROPROCESADOR INTEL CORE I5 10600K 4.8GHZ 6/12 12MB LGA1200 BULK",
+        "stock": 8,
+        "precio": 32900,
+        "imagen": "../images/corei5.png",
+        "cantidad": 1,
+        "categoria": "Microprocesadores"
+    },
+    {
+        "id": 5,
+        "descripcion": "GABINETE GAMEMAX TYPHOON COC FAN ARGB",
+        "stock": 7,
+        "precio": 11900,
+        "imagen": "../images/gabineteThyphoon.png",
+        "cantidad": 1,
+        "categoria": "Gabinetes"
+    },
+    {
+        "id": 6,
+        "descripcion": "GABINETE THERMALTAKE H200 TG RGB SNOW",
+        "stock": 6,
+        "precio": 18900,
+        "imagen": "../images/gabineteBlanco.png",
+        "cantidad": 1,
+        "categoria": "Gabinetes"
+    },
+    {
+        "id": 7,
+        "descripcion": "DISCO SOLIDO SSD 240 GB GIGABYTE SATA III GP-GSTF",
+        "stock": 15,
+        "precio": 5800,
+        "imagen": "../images/ssd240gb.png",
+        "cantidad": 1,
+        "categoria": "Discos Solidos"
+    },
+    {
+        "id": 8,
+        "descripcion": "DISCO DURO HDD 2TB SEAGATE BARRACUDA SATA III",
+        "stock": 8,
+        "precio": 10200,
+        "imagen": "../images/hdd2tbSeagate.png",
+        "cantidad": 1,
+        "categoria": "Discos Duros"
+    },
+    {
+        "id": 9,
+        "descripcion": "FUENTE GAMEMAX 600W VP-600 80+ BRONZE RGB",
+        "stock": 11,
+        "precio": 13490,
+        "imagen": "../images/fuenteGamemax600w80plus.png",
+        "cantidad": 1,
+        "categoria": "Fuentes"
+    },
+    {
+        "id": 10,
+        "descripcion": "FUENTE GAMEMAX 700W VP-600 80+ BRONZE RGB",
+        "stock": 7,
+        "precio": 13990,
+        "imagen": "../images/fuenteGamemax700w.png",
+        "cantidad": 1,
+        "categoria": "Fuentes"
+    },
+    {
+        "id": 11,
+        "descripcion": "GABINETE SHARKOON REV100",
+        "stock": 9,
+        "precio": 10590,
+        "imagen": "../images/gabineteSharkoon.png",
+        "cantidad": 1,
+        "categoria": "Gabinetes"
+    },
+    {
+        "id": 12,
+        "descripcion": "DISCO DURO HDD 2 TB WD SATA III 64MB/S BLUE",
+        "stock": 10,
+        "precio": 10200,
+        "imagen": "../images/discoduro2tb.png",
+        "cantidad": 1,
+        "categoria": "Discos Duros"
+    },
+    {
+        "id": 13,
+        "descripcion": "MONITOR 22 LED SAMSUNG T350 FHD IPS 5MS HDMI VGA 75HZ",
+        "stock": 8,
+        "precio": 51900,
+        "imagen": "../images/monitor22samsung75hz.png",
+        "cantidad": 1,
+        "categoria": "Monitores"
+    },
+
+    {
+        "id": 15,
+        "descripcion": "DISCO DURO EXTERNO 2TB SEAGATE BASIC USB 3.0",
+        "stock": 6,
+        "precio": 10990,
+        "imagen": "../images/discoExterno2tbseagate.png",
+        "cantidad": 1,
+        "categoria": "Discos Externos"
+    },
+    {
+        "id": 16,
+        "descripcion": "MEMORIA RAM DDR4 8GB 2666MHZ KINGSTON FURY BEAST RGB",
+        "stock": 10,
+        "precio": 9130,
+        "imagen": "../images/memoriaRam8gb2666mhzKingston.png",
+        "cantidad": 1,
+        "categoria": "Memorias RAM PC"
     }
-  ]
+]

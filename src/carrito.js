@@ -2,11 +2,10 @@ import { guardarCarritoEnStoraje, obtenerCarritoDeStoraje } from "./storaje.js";
 import { PRODUCTOS, carrito } from "./stock.js";
 
 
-//Funcion para agregar producto a carrito
 let contadorDeCompras = document.getElementById("cantidadDeCompras");
 contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
 
-
+//Funcion para agregar producto a carrito
 const agregarProductoACarrito = (id) => {
     let productoAniadido = PRODUCTOS.find(prod => prod.id === id);
     let productosDelCarrito = carrito.find(prod => prod.id === productoAniadido.id);

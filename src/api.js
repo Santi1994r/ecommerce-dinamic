@@ -1,3 +1,6 @@
+import { agregarProductoACarrito } from "./carrito.js";
+
+
 fetch("../json/stock.json")
     .then(response => response.json())
     .then(data => {

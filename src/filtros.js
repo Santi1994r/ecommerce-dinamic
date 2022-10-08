@@ -24,8 +24,7 @@ const reimprimirProdFilt = (array) => {
     array.forEach((producto) => {
         let card = document.createElement("div");
         card.classList.add("col");
-        card.innerHTML = `
-                          
+        card.innerHTML = ` 
                             <div class="card h-100 shadowYellow">
                               <img src="${producto.imagen}" class="card-img-top" alt="tu mundo digital">
                               <div class="card-body">
@@ -42,8 +41,6 @@ const reimprimirProdFilt = (array) => {
 
         $renderCards.append(cardContainer);
         cardContainer.append(card);
-
-
         card.querySelector("button").addEventListener("click", () => {
             Swal.fire({
                 position: 'center',
