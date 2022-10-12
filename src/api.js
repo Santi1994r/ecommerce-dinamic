@@ -1,7 +1,7 @@
 import { agregarProductoACarrito } from "./carrito.js";
 
 
-fetch("../json/stock.json")
+/* const fetchParaProductos = fetch("../json/stock.json")
     .then(response => response.json())
     .then(data => {
         const $renderCards = document.getElementById("renderCards");
@@ -49,4 +49,4 @@ fetch("../json/stock.json")
                 agregarProductoACarrito(producto.id);
             });
         });
-    });
+    }); */

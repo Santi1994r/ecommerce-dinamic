@@ -1,10 +1,10 @@
 import { guardarCarritoEnStoraje, obtenerCarritoDeStoraje } from "./storaje.js";
-import { PRODUCTOS, carrito } from "./stock.js";
+import { carrito, PRODUCTOS } from "./stock.js";
 
 
 let contadorDeCompras = document.getElementById("cantidadDeCompras");
 contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
-
+let productoAniadido;
 //Funcion para agregar producto a carrito
 const agregarProductoACarrito = (id) => {
     let productoAniadido = PRODUCTOS.find(prod => prod.id === id);
@@ -30,6 +30,7 @@ const agregarProductoACarrito = (id) => {
     guardarCarritoEnStoraje(carrito);
 
 };
+
 //Funcion para eliminar de a uno la cantidad de cada producto
 const eliminarProductoDelCarrito = (index) => {
     carrito[index].cantidad--;
@@ -122,5 +123,5 @@ const imprimirProductosDelCarrito = () => {
 imprimirProductosDelCarrito();
 
 
-export { agregarProductoACarrito }
-export { carrito }
+export { agregarProductoACarrito };
+export { carrito };

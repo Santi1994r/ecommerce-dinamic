@@ -1,10 +1,9 @@
 import { agregarProductoACarrito } from "./carrito.js";
-import { PRODUCTOS, FILTROS } from "./stock.js";
+import { FILTROS, PRODUCTOS } from "./stock.js";
 import { obtenerCarritoDeStoraje } from "./storaje.js";
 
 
 const filtrar = (filtro, index) => {
-    console.log(filtrarPorCategoria());
     (index === 0)
     ? reimprimirProdFilt(PRODUCTOS)     
     : reimprimirProdFilt(filtrarPorCategoria(filtro)); 
@@ -42,13 +41,18 @@ const reimprimirProdFilt = (array) => {
         $renderCards.append(cardContainer);
         cardContainer.append(card);
         card.querySelector("button").addEventListener("click", () => {
-            Swal.fire({
+            (producto.stock === 0)
+              ? Swal.fire({
+                icon: 'error',
+                title: 'No hay mas stock del producto',
+              })
+              : Swal.fire({
                 position: 'center',
                 icon: 'success',
                 title: `${producto.descripcion} \nAgregado al carrito`,
                 showConfirmButton: false,
                 timer: 1400
-            })
+              })
         });
         card.querySelector("button").addEventListener("click", () => {
             agregarProductoACarrito(producto.id);

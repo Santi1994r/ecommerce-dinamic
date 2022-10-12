@@ -31,12 +31,6 @@ import { obtenerCarritoDeStoraje } from "./storaje.js";
  let monitor24gigabyte165hz = new Producto(14, "MONITOR 24 GIGABYTE G24F FHD 1MS IPS 165HZ BLACK", 6, 74900, "../images/monitor24gigabyte165hz.png", 1, "Monitores");
  let discoExterno2tbseagate = new Producto(15, "DISCO DURO EXTERNO 2TB SEAGATE BASIC USB 3.0", 6, 10990, "../images/discoExterno2tbseagate.png", 1, "Discos Externos");
  let memoriaRam8gb2666mhzKingston = new Producto(16, "MEMORIA RAM DDR4 8GB 2666MHZ KINGSTON FURY BEAST RGB", 10, 9130, "../images/memoriaRam8gb2666mhzKingston.png", 1, "Memorias RAM PC");
-
-
-
-
- 
-
  
  const PRODUCTOS = [
    microAmd5,
@@ -71,4 +65,4 @@ import { obtenerCarritoDeStoraje } from "./storaje.js";
   "Memorias RAM PC"
 ];
 
-export { PRODUCTOS, FILTROS, carrito };
+export { FILTROS, carrito, PRODUCTOS };
