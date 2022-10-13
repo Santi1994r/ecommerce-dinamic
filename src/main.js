@@ -1,20 +1,15 @@
 import { agregarProductoACarrito } from "./carrito.js";
-import { PRODUCTOS } from "./stock.js";
 
-//intento de obtener lo que tiene fetch
-let todosLosProductos;
-//empiezo a volver atras con fetch
+let todosLosProductos = [];
 
-const productosDelFetch = () => {
+const fetchProducts = () => {
   fetch("../json/stock.json")
-    .then(response => response.json())
-    .then(data => {
-    todosLosProductos = [...data]
-      return todosLosProductos
+    .then((response) => response.json())
+    .then((data) => {
+      todosLosProductos = [...data];
+      crearTodosLosProductos();
     });
-  };
-  productosDelFetch();
-
+};
 
 const crearTodosLosProductos = () => {
   const $renderCards = document.getElementById("renderCards");
@@ -25,10 +20,10 @@ const crearTodosLosProductos = () => {
   cardContainer.classList.add("g-4");
   cardContainer.classList.add("my-3");
 
-  PRODUCTOS.forEach(producto => {
+  todosLosProductos.forEach((producto) => {
     let card = document.createElement("div");
-        card.classList.add("col");
-        card.innerHTML = `
+    card.classList.add("col");
+    card.innerHTML = `
                               <div class="card h-100 shadowYellow">
                                 <img src="${producto.imagen}" class="card-img-top" alt="tu mundo digital">
                                 <div class="card-body">
@@ -41,36 +36,39 @@ const crearTodosLosProductos = () => {
                                   <button type="button" class="btn btn-warning offset-3 w-50" id="${producto.id}" >Agregar al Carrito</button>
                                 </div>
                               </div>
-                            `
+                            `;
 
-        $renderCards.append(cardContainer);
-        cardContainer.append(card);
-        card.querySelector("button").addEventListener("click", () => {
-          (producto.stock === 0) ?
-          Swal.fire({
-            icon: 'error',
-            title: 'No hay mas stock del producto',
-          }): Swal.fire({
-            position: 'center',
-            icon: 'success',
+    $renderCards.append(cardContainer);
+    cardContainer.append(card);
+    card.querySelector("button").addEventListener("click", () => {
+      producto.stock === 0
+        ? Swal.fire({
+            icon: "error",
+            title: "No hay mas stock del producto",
+          })
+        : Swal.fire({
+            position: "center",
+            icon: "success",
             title: `${producto.descripcion} \nAgregado al carrito`,
             showConfirmButton: false,
-            timer: 1400
-          })
-        });
+            timer: 1400,
+          });
+    });
 
-        card.querySelector("button").addEventListener("click", () => {
-          agregarProductoACarrito(producto.id);
-        });
-  });
-
-}
-
-
-const mostrarTodosLosProductos = () => {
-  document.addEventListener("DOMContentLoaded", () => {
-    crearTodosLosProductos();
+    card.querySelector("button").addEventListener("click", () => {
+      agregarProductoACarrito(producto.id);
+    });
   });
 };
 
+const mostrarTodosLosProductos = () => {
+  document.addEventListener("DOMContentLoaded", fetchProducts);
+};
+
 mostrarTodosLosProductos();
+
+export { todosLosProductos };
+
+console.log(todosLosProductos);
+setTimeout(() => console.log(todosLosProductos), 1000);
+

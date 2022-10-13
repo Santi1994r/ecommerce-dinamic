@@ -1,7 +1,7 @@
 import { obtenerCarritoDeStoraje } from "./storaje.js";
 
 
-//clase constructora de objetos
+/* //clase constructora de objetos
  class Producto {
    constructor(id, descripcion, stock, precio, imagen, cantidad, categoria) {
      this.id = id;
@@ -49,7 +49,7 @@ import { obtenerCarritoDeStoraje } from "./storaje.js";
    gabineteSharkoon,
    discoduro2tb,
    monitor22samsung75hz  
- ];
+ ]; */
 
  let carrito = obtenerCarritoDeStoraje() || [];
 
@@ -65,4 +65,4 @@ import { obtenerCarritoDeStoraje } from "./storaje.js";
   "Memorias RAM PC"
 ];
 
-export { FILTROS, carrito, PRODUCTOS };
+export { FILTROS, carrito };
