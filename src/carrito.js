@@ -19,9 +19,7 @@ const agregarProductoACarrito = (id) => {
     } else {
       productosDelCarrito.cantidad++;
       productosDelCarrito.stock--;
-      contadorDeCompras.innerText = carrito.reduce(
-        (acc, prod) => acc + prod.cantidad,
-        0
+      contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0
       );
     }
   } else {
@@ -33,7 +31,7 @@ const agregarProductoACarrito = (id) => {
     );
   }
   imprimirProductosDelCarrito();
-  mostrarTotalDelCarrito();
+  /* mostrarTotalDelCarrito(); */
   guardarCarritoEnStoraje(carrito);
 };
 
@@ -51,22 +49,16 @@ const eliminarProductoDelCarrito = (index) => {
 };
 
 //Funcion para mostrar la suma de todos los productos del carrito cuando se le da click a finalizar compra
-const mostrarTotalDelCarrito = () => {
-  let imprimirTotalDelCarrito = document.getElementById(
-    "imprimirTotalDelCarrito"
-  );
-  const buttonFinalizarCompra = document
-    .getElementById("finalizarCompra")
-    .addEventListener("click", () => {
+/* const mostrarTotalDelCarrito = () => {
+  let imprimirTotalDelCarrito = document.getElementById("imprimirTotalDelCarrito");
+  const buttonFinalizarCompra = document.getElementById("finalizarCompra").addEventListener("click", () => {
       imprimirTotalDelCarrito.innerText = totalDeCompra();
     });
-};
+}; */
 
 //Funcion para calcular el total de los productos del carrito
 const totalDeCompra = () => {
-  const total = carrito.reduce(
-    (acc, elem) => acc + elem.precio * elem.cantidad,
-    0
+  const total = carrito.reduce((acc, elem) => acc + elem.precio * elem.cantidad, 0
   );
   return total;
 };

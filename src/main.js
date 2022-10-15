@@ -29,7 +29,6 @@ const crearTodosLosProductos = () => {
                                 <div class="card-body">
                                   <h5 class="card-title">${producto.descripcion}</h5>
                                   <p class="card-text">$${producto.precio}</p>
-                                  <p class="card-text">Stock disponible: ${producto.stock}</p>
                                   <p class="card-text">Impuesto Incluido</p>
                                   <div class="input-group mb-3 w-75">
                                   </div>
@@ -41,21 +40,13 @@ const crearTodosLosProductos = () => {
     $renderCards.append(cardContainer);
     cardContainer.append(card);
     card.querySelector("button").addEventListener("click", () => {
-      producto.stock === 0
-        ? Swal.fire({
-            icon: "error",
-            title: "No hay mas stock del producto",
-          })
-        : Swal.fire({
-            position: "center",
-            icon: "success",
-            title: `${producto.descripcion} \nAgregado al carrito`,
-            showConfirmButton: false,
-            timer: 1400,
-          });
-    });
-
-    card.querySelector("button").addEventListener("click", () => {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: `${producto.descripcion} \nAgregado al carrito`,
+        showConfirmButton: false,
+        timer: 1400,
+      });
       agregarProductoACarrito(producto.id);
     });
   });
@@ -67,8 +58,9 @@ const mostrarTodosLosProductos = () => {
 
 mostrarTodosLosProductos();
 
-export { todosLosProductos };
+export {
+  todosLosProductos
+};
 
 console.log(todosLosProductos);
 setTimeout(() => console.log(todosLosProductos), 1000);
-
