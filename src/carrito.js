@@ -14,31 +14,21 @@ const agregarProductoACarrito = (id) => {
   let productosDelCarrito = carrito.find((prod) => prod.id === productoAniadido.id
   );
   if (productosDelCarrito) {
-    if (productosDelCarrito.stock === 0) {
-      productosDelCarrito.stock;
-    } else {
       productosDelCarrito.cantidad++;
-      productosDelCarrito.stock--;
       contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0
       );
-    }
   } else {
-    productoAniadido.stock--;
     carrito.push(productoAniadido);
-    contadorDeCompras.innerText = carrito.reduce(
-      (acc, prod) => acc + prod.cantidad,
-      0
+    contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0
     );
   }
   imprimirProductosDelCarrito();
-  /* mostrarTotalDelCarrito(); */
   guardarCarritoEnStoraje(carrito);
 };
 
 //Funcion para eliminar de a uno la cantidad de cada producto
 const eliminarProductoDelCarrito = (index) => {
   carrito[index].cantidad--;
-  carrito[index].stock++;
   contadorDeCompras.innerText--;
   if (carrito[index].cantidad === 0) {
     carrito[index].cantidad = 1;

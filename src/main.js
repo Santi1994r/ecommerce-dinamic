@@ -58,9 +58,7 @@ const mostrarTodosLosProductos = () => {
 
 mostrarTodosLosProductos();
 
-export {
-  todosLosProductos
-};
+export { todosLosProductos };
 
 console.log(todosLosProductos);
 setTimeout(() => console.log(todosLosProductos), 1000);
