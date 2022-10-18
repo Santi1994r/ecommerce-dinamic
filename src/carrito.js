@@ -1,38 +1,65 @@
-import { guardarCarritoEnStoraje, obtenerCarritoDeStoraje } from "./storaje.js";
-import { carrito } from "./stock.js";
-import { todosLosProductos } from "./main.js";
+import {
+  guardarCarritoEnStoraje,
+  obtenerCarritoDeStoraje
+} from "./storaje.js";
+import {
+  carrito
+} from "./stock.js";
+import {
+  todosLosProductos
+} from "./main.js";
 
 let contadorDeCompras = document.getElementById("cantidadDeCompras");
-contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0
-);
+contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+
+//funcion que contiene alerta para consultarle al usuario si esta seguro de finalizar la compra
+const areYouSure = () => {
+  Swal.fire({
+    title: 'Esta seguro/a de que quiere finalizar la compra?',
+    text: "No podra volver atras",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, Finalizar!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Felicidades!',
+        'Tu compra se ha realizado con exito',
+        'success'
+      )
+      carrito = [];
+      console.log(carrito);
+    }
+  })
+};
+
 
 //Funcion para desabilitar el boton de finalizar compra si no hay nada en el carrito
 const disableBtnPay = () => {
   const disableBtnPay = document.getElementById("disableBtnPay");
+  disableBtnPay.addEventListener("click", areYouSure)
   console.log(carrito);
   if (carrito.length === 0) {
     disableBtnPay.classList.add("d-none");
-  } else {
-    disableBtnPay
-  };
+  }
 };
-disableBtnPay();
+
 
 
 //Funcion para agregar producto a carrito
 const agregarProductoACarrito = (id) => {
   let productoAniadido = todosLosProductos.find((prod) => prod.id === id);
-  let productosDelCarrito = carrito.find((prod) => prod.id === productoAniadido.id
-  );
+  let productosDelCarrito = carrito.find((prod) => prod.id === productoAniadido.id);
   if (productosDelCarrito) {
-      productosDelCarrito.cantidad++;
-      contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0
-      );
+    productosDelCarrito.cantidad++;
+    contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
   } else {
     carrito.push(productoAniadido);
-    contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0
-    );
+    contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
   }
+  console.log(carrito);
   imprimirProductosDelCarrito();
   guardarCarritoEnStoraje(carrito);
 };
@@ -45,6 +72,7 @@ const eliminarProductoDelCarrito = (index) => {
     carrito[index].cantidad = 1;
     carrito.splice(index, 1);
   }
+  disableBtnPay();
   actualizarProductosEnCarrito();
   guardarCarritoEnStoraje(carrito);
 };
@@ -52,8 +80,7 @@ const eliminarProductoDelCarrito = (index) => {
 
 //Funcion para calcular el total de los productos del carrito
 const totalDeCompra = () => {
-  const total = carrito.reduce((acc, elem) => acc + elem.precio * elem.cantidad, 0
-  );
+  const total = carrito.reduce((acc, elem) => acc + elem.precio * elem.cantidad, 0);
   return total;
 };
 
@@ -114,9 +141,14 @@ const imprimirProductosDelCarrito = () => {
         eliminarProductoDelCarrito(index);
       });
     });
+    disableBtnPay();
   });
 };
 imprimirProductosDelCarrito();
 
-export { agregarProductoACarrito };
-export { carrito };
+export {
+  agregarProductoACarrito
+};
+export {
+  carrito
+};
