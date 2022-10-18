@@ -22,7 +22,12 @@ const areYouSure = () => {
         'Tu compra se ha realizado con exito',
         'success'
       )
-      carrito = [];
+      //ahora al guardar en el storaje este array vacio me lo reemplaza pero me muestra los cambios si yo reinicio la pagina. me pasa lo mismo que con el boton, estoy teniendo ese problema para que se actualize solo.
+      guardarCarritoEnStoraje([]);
+      contadorDeCompras.innerText = 0;
+      console.log(carrito);
+      actualizarProductosEnCarrito(obtenerCarritoDeStoraje());
+      disableBtnPay();
       console.log(carrito);
     }
   })
@@ -31,14 +36,14 @@ const areYouSure = () => {
 
 //Funcion para desabilitar el boton de finalizar compra si no hay nada en el carrito
 const disableBtnPay = () => {
-  const disableBtnPay = document.getElementById("disableBtnPay");
-  disableBtnPay.addEventListener("click", areYouSure)
+  let disableBtnPay = document.getElementById("disableBtnPay");
+  disableBtnPay.addEventListener("click", areYouSure);
   console.log(carrito);
   if (carrito.length === 0) {
     disableBtnPay.classList.add("d-none");
   }
 };
-
+disableBtnPay();
 
 
 //Funcion para agregar producto a carrito
@@ -52,7 +57,6 @@ const agregarProductoACarrito = (id) => {
     carrito.push(productoAniadido);
     contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
   }
-  console.log(carrito);
   imprimirProductosDelCarrito();
   guardarCarritoEnStoraje(carrito);
 };
@@ -66,7 +70,7 @@ const eliminarProductoDelCarrito = (index) => {
     carrito.splice(index, 1);
   }
   disableBtnPay();
-  actualizarProductosEnCarrito();
+  actualizarProductosEnCarrito(carrito);
   guardarCarritoEnStoraje(carrito);
 };
 
@@ -76,11 +80,13 @@ const totalDeCompra = () => {
   const total = carrito.reduce((acc, elem) => acc + elem.precio * elem.cantidad, 0);
   return total;
 };
+//prueba con carrito
 
+//dfasfdasdsad  wsadasdsdass  dasdasdas
 //Funcion para actualizar productos una vez que vas eliminando
-const actualizarProductosEnCarrito = () => {
+const actualizarProductosEnCarrito = (carr) => {
   divContainer.innerText = "";
-  carrito.forEach((prod, index) => {
+  carr.forEach((prod, index) => {
     const card = document.createElement("div");
     card.classList.add("col");
     card.innerHTML = `
@@ -134,14 +140,11 @@ const imprimirProductosDelCarrito = () => {
         eliminarProductoDelCarrito(index);
       });
     });
+    console.log(carrito);
     disableBtnPay();
   });
 };
 imprimirProductosDelCarrito();
 
-export {
-  agregarProductoACarrito
-};
-export {
-  carrito
-};
+export { agregarProductoACarrito };
+export { carrito };
