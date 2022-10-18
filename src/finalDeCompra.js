@@ -1,19 +1,4 @@
-import {
-    carrito
-} from "./stock.js";
-
-
-const thanksForBuying = () => {
-    Swal.fire({
-        position: "center",
-        icon: "success",
-        title: `Gracias por tu compra!!`,
-        text: 'Vuelve pronto',
-        showConfirmButton: false,
-        timer: 1200,
-    });
-
-};
+import { carrito } from "./stock.js";
 
 const showDetail = () => {
     let purchaseDetail = document.getElementById("detalleDeCompra");
@@ -32,12 +17,6 @@ const showDetail = () => {
         div.append($ul);
 
     });
-
-    let btnPay = document.createElement("button");
-    btnPay.setAttribute("type", "button");
-    btnPay.classList.add("btn", "btn-primary");
-    btnPay.textContent = "Pagar";
-    div.append(btnPay);
-    btnPay.addEventListener("click", thanksForBuying);
 };
+
 showDetail();

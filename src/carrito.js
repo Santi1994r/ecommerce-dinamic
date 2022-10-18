@@ -1,13 +1,6 @@
-import {
-  guardarCarritoEnStoraje,
-  obtenerCarritoDeStoraje
-} from "./storaje.js";
-import {
-  carrito
-} from "./stock.js";
-import {
-  todosLosProductos
-} from "./main.js";
+import { guardarCarritoEnStoraje, obtenerCarritoDeStoraje } from "./storaje.js";
+import { carrito } from "./stock.js";
+import { todosLosProductos } from "./main.js";
 
 let contadorDeCompras = document.getElementById("cantidadDeCompras");
 contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
