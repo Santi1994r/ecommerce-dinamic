@@ -3,10 +3,21 @@ import { carrito } from "./stock.js";
 import { todosLosProductos } from "./main.js";
 
 let contadorDeCompras = document.getElementById("cantidadDeCompras");
-contadorDeCompras.innerText = carrito.reduce(
-  (acc, prod) => acc + prod.cantidad,
-  0
+contadorDeCompras.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad, 0
 );
+
+//Funcion para desabilitar el boton de finalizar compra si no hay nada en el carrito
+const disableBtnPay = () => {
+  const disableBtnPay = document.getElementById("disableBtnPay");
+  console.log(carrito);
+  if (carrito.length === 0) {
+    disableBtnPay.classList.add("d-none");
+  } else {
+    disableBtnPay
+  };
+};
+disableBtnPay();
+
 
 //Funcion para agregar producto a carrito
 const agregarProductoACarrito = (id) => {
@@ -38,13 +49,6 @@ const eliminarProductoDelCarrito = (index) => {
   guardarCarritoEnStoraje(carrito);
 };
 
-//Funcion para mostrar la suma de todos los productos del carrito cuando se le da click a finalizar compra
-/* const mostrarTotalDelCarrito = () => {
-  let imprimirTotalDelCarrito = document.getElementById("imprimirTotalDelCarrito");
-  const buttonFinalizarCompra = document.getElementById("finalizarCompra").addEventListener("click", () => {
-      imprimirTotalDelCarrito.innerText = totalDeCompra();
-    });
-}; */
 
 //Funcion para calcular el total de los productos del carrito
 const totalDeCompra = () => {

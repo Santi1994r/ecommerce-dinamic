@@ -60,5 +60,5 @@ mostrarTodosLosProductos();
 
 export { todosLosProductos };
 
-console.log(todosLosProductos);
-setTimeout(() => console.log(todosLosProductos), 1000);
+/* console.log(todosLosProductos);
+setTimeout(() => console.log(todosLosProductos), 1000); */

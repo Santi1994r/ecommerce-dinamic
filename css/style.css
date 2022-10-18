@@ -124,6 +124,17 @@ body {
       }
 /* ------FIN DE ESTILOS DE ARCHIVO CONTACTO.HTML---- */
 
+/* ------ESTILOS DE ARCHIVO  compraFinalizada.HTML---- */
+      .productosComprados {
+        background-color: #FFF176;
+        width: 15rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        margin: 1rem;
+        list-style-type: none;
+      }
+/* ------FIN DE ESTILOS DE ARCHIVO compraFinalizada.HTML---- */
+
 
 
 
