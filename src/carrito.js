@@ -129,6 +129,9 @@ const areYouSure = () => {
         icon: 'success'
       })
       soundPay();
+      carrito.forEach((prod) => {
+        prod.cantidad = 1;
+      })
       carrito = [];
       guardarCarritoEnStoraje([]);
       contadorDeCompras.innerText = 0;
