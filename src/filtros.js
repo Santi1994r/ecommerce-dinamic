@@ -2,6 +2,7 @@ import { agregarProductoACarrito } from "./carrito.js";
 import { FILTROS } from "./stock.js";
 import { todosLosProductos } from "./main.js";
 
+
 const filtrar = (filtro, index) => {
   index === 0
     ? reimprimirProdFilt(todosLosProductos)
@@ -58,6 +59,7 @@ const filtrarPorCategoria = (filtro) => {
   return productosFiltrados;
 };
 
+//funcion para mostrar los filtros
 const renderizarFiltros = () => {
   const $filtrosContainer = document.getElementById("filtrosContainer");
   const $ul = document.createElement("ul");

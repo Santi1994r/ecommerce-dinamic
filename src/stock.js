@@ -1,7 +1,3 @@
-import { obtenerCarritoDeStoraje } from "./storaje.js";
-
-
- let carrito = obtenerCarritoDeStoraje() || [];
 
  const FILTROS = [
   "Todos",
@@ -15,4 +11,4 @@ import { obtenerCarritoDeStoraje } from "./storaje.js";
   "Memorias RAM PC"
 ];
 
-export { FILTROS, carrito };
+export { FILTROS };
