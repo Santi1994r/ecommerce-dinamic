@@ -104,6 +104,11 @@ body {
     list-style: none;
 }
 
+.filtroDeProductos {
+    color: #21618C;
+
+}
+
 .filtroDeProductos:hover {
     background-color: #F7DC6F;
     box-shadow: 0 .2rem 1rem #FFF176;
