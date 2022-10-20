@@ -101,6 +101,16 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    list-style: none;
+}
+
+.filtroDeProductos:hover {
+    background-color: #F7DC6F;
+    box-shadow: 0 .2rem 1rem #FFF176;
+    color: #000;
+    padding: .1rem;
+    border-radius: .4rem;
+    text-decoration: none;
 }
 
 /* ------FIN DE ESTILOS DE ARCHIVO PRODUCTOS.HTML---- */
@@ -123,18 +133,6 @@ body {
         justify-content: center;
       }
 /* ------FIN DE ESTILOS DE ARCHIVO CONTACTO.HTML---- */
-
-/* ------ESTILOS DE ARCHIVO  compraFinalizada.HTML---- */
-      .productosComprados {
-        background-color: #FFF176;
-        width: 15rem;
-        padding: 1rem;
-        border-radius: 1rem;
-        margin: 1rem;
-        list-style-type: none;
-      }
-/* ------FIN DE ESTILOS DE ARCHIVO compraFinalizada.HTML---- */
-
 
 
 

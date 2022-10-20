@@ -9,7 +9,6 @@ const filtrar = (filtro, index) => {
     : reimprimirProdFilt(filtrarPorCategoria(filtro));
 };
 
-//funcion para "reimprimir" los productos filtrados
 const reimprimirProdFilt = (array) => {
   const $renderCards = document.getElementById("renderCards");
   let cardContainer = document.createElement("div");
@@ -52,14 +51,12 @@ const reimprimirProdFilt = (array) => {
   });
 };
 
-//funcion para filtrar los productos seleccionados.
 const filtrarPorCategoria = (filtro) => {
   const productosFiltrados = todosLosProductos.filter((prod) => prod.categoria === filtro
   );
   return productosFiltrados;
 };
 
-//funcion para mostrar los filtros
 const renderizarFiltros = () => {
   const $filtrosContainer = document.getElementById("filtrosContainer");
   const $ul = document.createElement("ul");
@@ -70,7 +67,7 @@ const renderizarFiltros = () => {
     $li.classList.add("text-light");
     $li.classList.add("my-2");
     $li.innerHTML = `
-        <a href="#">${filtro}</a>
+        <a class="filtroDeProductos" href="#">${filtro}</a>
         `;
     $ul.append($li);
     $li.querySelector("a").addEventListener("click", () => {

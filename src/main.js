@@ -8,7 +8,8 @@ const fetchProducts = () => {
     .then((data) => {
       todosLosProductos = [...data];
       crearTodosLosProductos();
-    });
+    })
+    .catch((error) => console.log(error));
 };
 
 const crearTodosLosProductos = () => {
